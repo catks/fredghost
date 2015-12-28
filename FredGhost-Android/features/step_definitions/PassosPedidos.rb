@@ -3,6 +3,7 @@ require 'calabash-android/calabash_steps'
 
 Então(/^escolho o tamanho "([^"]*)"$/) do |tamanho|
   tap_mark 'Tamanho'
+  sleep 2
   tap_mark tamanho
 end
 
@@ -12,7 +13,7 @@ Então(/^posso visualizar o item "([^"]*)" no carrinho$/) do |nomeProduto|
 end
 
 
-Então(/^devo me logar(?: com email "([^"]*)" e com senha "([^"]*)" )?$/) do |email,senha|
+Então(/^devo me logar(?: com email "([^"]*)" e com senha "([^"]*)")?$/) do |email,senha|
 
   #valores default
   email ||= "prd-fred.automation@gmail.com"

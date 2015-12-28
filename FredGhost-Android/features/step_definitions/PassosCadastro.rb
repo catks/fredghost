@@ -9,6 +9,7 @@ Então(/^preencho o campo CPF$/) do
   @cpf = Utilidades.geraCPF
   touch Elementos::CadastroPF::Cpf
   keyboard_enter_text(@cpf)
+  @email = @cpf
 end
 
 Então(/^escolho a data do campo "([^"]*)" com o dia "([^"]*)", mês "([^"]*)" e ano "([^"]*)"$/) do |campo, dia, mes, ano|
@@ -68,7 +69,9 @@ end
 Então(/^preencho o campo Email com o gerado e o dominio "([^"]*)"$/) do |dominio|
   touch Elementos::CadastroDadosDeAcesso::Email
   #keyboard_enter_text(@cpf + dominio)
-  @email = @cpf + dominio
+
+  @email = @email + dominio #Somente cpf ou cnpj terá um valor
+
   keyboard_enter_text(@email)
 end
 
@@ -78,4 +81,12 @@ end
 
 Então(/^verifico se estou logado com meu novo email$/) do
   assert_text @email
+end
+
+Então(/^preencho o campo CNPJ$/) do
+  @cnpj = Utilidades.geraCNPJ
+  #touch Elementos::CadastroPJ::Cnpj
+  #sleep 2
+  keyboard_enter_text(@cnpj)
+  @email = @cnpj
 end

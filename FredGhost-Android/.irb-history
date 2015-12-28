@@ -1,21 +1,3 @@
-exit
-start_test_server_in_background
-query "* marked:'12 dezembro 2015'"
-query "* marked:'17 dezembro 2015'"
-query "* contentDes:'17 dezembro 2015'"
-start_test_server_in_background
-contentDescription:
-tap_when_element_exists("View contentDescription:'17 dezembro 2015'")
-touch("View contentDescription:'17 dezembro 2015'")
-exit
-start_test_server_in_background
-query "* id:'cell_phone'"
-query "textField isFirstResponder:1"
-query "textField isFirstResponder:"
-exit
-reinstall_apps
-start_test_server_in_background
-start_test_server_in_background
 touch "View index:8"
 touch "View index:"
 touch("View contentDescription:'17 dezembro 2015'")
@@ -47,4 +29,22 @@ tap_mark "Complemento"
 start_test_server_in_background
 tap_mark "Confirme a senha"
 tap_mark "Confirme a senha"
+exit
+start_test_server_in_background
+tap_mark "Novo Cadastro"
+tap_mark "Novo Cadastro"
+exit
+start_test_server_in_background
+keyboard_enter_text("24503260752948")
+keyboard_enter_text("24503260752948")
+exit
+start_test_server_in_background
+query("* text CONTAINS 'Telefone Celular'")
+query("* {text CONTAINS 'Telefone Celular'}")
+query("* {text CONTAINS 'Telefone Celular'}")
+query("* {text CONTAINS 'Telefone Celular'}")
+query("EditText {text CONTAINS 'Telefone Celular'}")
+query("EditText")
+tap_mark "Telefone"
+query("* marked:'Telefone Celular'")
 exit

@@ -37,10 +37,10 @@ end
 
 Então /^deslizo para baixo até que eu veja o "([^\"]*)"/ do |elemento|
 
-  q = query("* text:'#{elemento}'")
+  q = query("* marked:'#{elemento}'")
     while q.empty?
       scroll_down
-      q = query("* text:'#{elemento}'")
+      q = query("* marked:'#{elemento}'")
     end
 end
 

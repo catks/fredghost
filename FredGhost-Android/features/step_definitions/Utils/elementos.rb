@@ -14,6 +14,14 @@ module Elementos
   end
 
   module CadastroPJ
+    Cnpj = "* id:'e_register'"
+    Nome = "* id:'e_name'"
+    Sobrenome= "* id:'e_lastname'"
+    Setor= "* id:'e_section'"
+    Cargo= "* id:'e_job_name'"
+    Inscicao_Estadual= "* id:'e_state_register'"
+    Razao_Social= "* id:'e_enterprise'"
+    Nome_Fantasia= "* id:'e_fake_name'"
 
   end
 
