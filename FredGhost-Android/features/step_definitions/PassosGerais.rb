@@ -53,3 +53,10 @@ Então(/^clico no botão circular.*$/) do
   touch 'FloatingActionButton'
   #screenshot({:name=>"my.png"}) # tira screenshot
 end
+
+Então(/^preencho o campo "([^"]*)" com "([^"]*)"$/) do |campo, texto|
+  tap_mark campo
+  keyboard_enter_text(texto)
+  hide_soft_keyboard #Retira o teclado da tela se estiver visivel
+
+end

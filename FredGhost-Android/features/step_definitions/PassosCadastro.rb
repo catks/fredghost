@@ -11,13 +11,6 @@ Então(/^preencho o campo CPF$/) do
   keyboard_enter_text(@cpf)
 end
 
-Então(/^preencho o campo "([^"]*)" com "([^"]*)"$/) do |campo, texto|
-  tap_mark campo
-  keyboard_enter_text(texto)
-  hide_soft_keyboard #Retira o teclado da tela se estiver visivel
-end
-
-
 Então(/^escolho a data do campo "([^"]*)" com o dia "([^"]*)", mês "([^"]*)" e ano "([^"]*)"$/) do |campo, dia, mes, ano|
   touch Elementos::CadastroPF::DataDeNascimento
 
@@ -55,6 +48,9 @@ Então(/^escolho a data do campo "([^"]*)" com o dia "([^"]*)", mês "([^"]*)" e
   #
   # tap_mark dia
 
+  touch "* index:0" #Toca em um dia
+  ##
+
   tap_mark "OK"
 end
 
@@ -71,13 +67,15 @@ end
 
 Então(/^preencho o campo Email com o gerado e o dominio "([^"]*)"$/) do |dominio|
   touch Elementos::CadastroDadosDeAcesso::Email
-  keyboard_enter_text(@cpf + dominio)
+  #keyboard_enter_text(@cpf + dominio)
+  @email = @cpf + dominio
+  keyboard_enter_text(@email)
 end
 
 Então(/^aguardo "([^"]*)" segundos$/) do |segundos|
-  sleep(segundos)
+  sleep(segundos.to_i)
 end
 
-Então(/^verifico se estou logado$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+Então(/^verifico se estou logado com meu novo email$/) do
+  assert_text @email
 end

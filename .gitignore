@@ -36,3 +36,6 @@ build/
 
 # Aplicativos Android
 *.apk
+
+#imagens
+*.png
