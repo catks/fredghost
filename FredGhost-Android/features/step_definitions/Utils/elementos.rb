@@ -49,6 +49,16 @@ module Elementos
     Dia="* id:'date_picker_day'"
   end
 
+  module Carrinho
+    #Array_Quantidade = "* id:'product_quantity'"
+    Array_Nome_Produto = "* id:'product_name'"
+    Array_Quantidades = "* id:'text1'"
+    Array_Precos = "* id:'new_price'"
+
+
+
+  end
+
 
 
 end

@@ -1,50 +1,50 @@
-touch "View index:8"
-touch "View index:"
-touch("View contentDescription:'17 dezembro 2015'")
-query '* index:1'
-touch "View index:'25'" 
-touch "View index:'14'" 
-touch "View index:'2'" 
-touch "* index:'2'" 
-touch "* index:'7'" 
-touch "View index:'7'" 
-query "View"
-query "View index:0"
-query "* index:0"
-touch "* index:0"
-touch "* index:-1"
-start_test_server_in_background
-query "* index:0"
-touch "* index:0"
-touch "* index:1"
-touch "* index:1"
-touch "* index:2"
-touch "* index:0",:class
-query "* index:0",:class
-query "* index:0",:description
-query "* index:0",:contentDescription
+query ("* id:'text1'", :text)
+query ("* id:'text1'")
+query ("* id:'text1'")
+query ("* id:'text1'" , :text)
+query ("* id:'text1'" , :text)
+query ("* id:'text1'" , :text))
+query ("* id:'text1'" , :text)
+query ("* id:'product_quantity'",:text)
+(query "* id:'product_quantity'", :text)
+(query "* id:'text1'", :text)
+(query "* id:'text1'", :text)
+(query "* id:'text1'", :text)[0]
 exit
+start_test_server_in_background
+query("TextView index:0",:text).first["Carrinho"]
+query("TextView index:0",:text).first["Carrinh"]
+query("TextView index:0",:text).first
+query("TextView index:0",:text).first["hue"]
+query("TextView index:0",:text).first["asdasd"]
+query("TextView index:0",:text).first["Ca"]
+query("TextView index:0",:text).first["Carrinho"]
+query("TextView index:0",:text).first["Carrinhos"]
+query("TextView index:0",:text).first["Carrinho"]
+exit
+exit
+exit
+start_test_server_in_background
+query("TextView index:0",:text).first
+query("TextView index:0",:text)
+query("TextView id:'new_price'",:text)
+query("TextView id:'new_price'")
+query("TextView id:'new_price'",:text)
 query *
-tap_mark "Complemento"
-start_test_server_in_background
-tap_mark "Confirme a senha"
-tap_mark "Confirme a senha"
+query "*"
+query "*"
+query("* id:'new_price'",:text)
+query("* id:'new_price'",:text)
+query("* id:'new_price'",:text).first
+query("* id:'new_price'",:text).first.slice "R$"
+query("* id:'new_price'",:text).first.slice "R$"
 exit
 start_test_server_in_background
-tap_mark "Novo Cadastro"
-tap_mark "Novo Cadastro"
+query("* id:'product_name'",:text)
+query("* id:'product_name'",:text)[0]
 exit
 start_test_server_in_background
-keyboard_enter_text("24503260752948")
-keyboard_enter_text("24503260752948")
-exit
-start_test_server_in_background
-query("* text CONTAINS 'Telefone Celular'")
-query("* {text CONTAINS 'Telefone Celular'}")
-query("* {text CONTAINS 'Telefone Celular'}")
-query("* {text CONTAINS 'Telefone Celular'}")
-query("EditText {text CONTAINS 'Telefone Celular'}")
-query("EditText")
-tap_mark "Telefone"
-query("* marked:'Telefone Celular'")
+(query "* id:'text1'", :text)[0]
+(query "* id:'text1'", :text)[0]
+touch (query "* id:'text1'")[0]
 exit

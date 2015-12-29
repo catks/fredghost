@@ -30,6 +30,7 @@ Então(/^posso clicar no primeiro item$/) do
 end
 
 Então(/^volto a tela$/) do
+  sleep 3
   press_back_button
   #wait_for(timeout: 10) { element_exists "imagebutton index:0" }
   #touch "imagebutton index:0"
