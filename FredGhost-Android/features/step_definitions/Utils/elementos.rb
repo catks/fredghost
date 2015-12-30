@@ -54,7 +54,8 @@ module Elementos
     Array_Nome_Produto = "* id:'product_name'"
     Array_Quantidades = "* id:'text1'"
     Array_Precos = "* id:'new_price'"
-
+    Array_Cor = "* id:'product_color'"
+    Array_Tamanho = "* id:'product_size'"
 
 
   end

@@ -29,10 +29,24 @@ Cenário: Alterar quantidade
   E clico em "4"
   Então a quantidade e o preço do item "1" deverá ter mudado
 
-@itensDiferentes
+@itens_diferentes
 Cenário: Itens diferentes no carrinho
 
 Dado que estou no carrinho
 E posso visualizar os itens no carrinho
 E que tenho mais de "1" item no carrinho
 Então posso visualizar os dados dos itens
+
+@exibicao_produtos
+Cenário: Verificar a exibição dos produtos - Nome, Tamanho, Cor, Valor
+Dado que estou no carrinho
+E posso visualizar os itens no carrinho
+Então posso visualizar os dados dos itens
+
+@refresh
+Cenário: Dar refresh no carrinho e verificar os itens
+Dado que estou no carrinho
+E posso visualizar os itens no carrinho
+E saio do carrinho
+E volto ao carrinho
+Então devo visualizar os mesmos itens de antes
