@@ -1,6 +1,7 @@
 # encoding: utf-8
 require 'calabash-android/calabash_steps'
 
+
 Dado(/^que estou na tela inicial$/) do
   #check_element_exists("imagebutton index:0")
   check_element_exists("* marked:'Pesquisar'")
@@ -14,6 +15,7 @@ end
 Quando(/^clicar em pesquisar$/) do
   tap_mark "Pesquisar"
 end
+
 
 Quando(/^preencho a busca com "([^"]*)"$/) do |texto|
   keyboard_enter_text(texto)
@@ -60,4 +62,8 @@ Então(/^preencho o campo "([^"]*)" com "([^"]*)"$/) do |campo, texto|
   keyboard_enter_text(texto)
   hide_soft_keyboard #Retira o teclado da tela se estiver visivel
 
+end
+
+Então(/^aguardo "([^"]*)" segundos$/) do |segundos|
+  sleep(segundos.to_i)
 end

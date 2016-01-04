@@ -1,50 +1,50 @@
-query("TextView index:0",:text).first["Carrinh"]
-query("TextView index:0",:text).first
-query("TextView index:0",:text).first["hue"]
-query("TextView index:0",:text).first["asdasd"]
-query("TextView index:0",:text).first["Ca"]
-query("TextView index:0",:text).first["Carrinho"]
-query("TextView index:0",:text).first["Carrinhos"]
-query("TextView index:0",:text).first["Carrinho"]
-exit
-exit
+start_test_server_in_background
+element_exists "ProgressBar"
+element_exists "ProgressBar"
+element_exists "ProgressBar"
+wait_for_element_does_not_exist("ProgressBar", :timeout => 5)
+wait_for_element_does_not_exist("ProgressBar", :timeout => 5)
 exit
 start_test_server_in_background
-query("TextView index:0",:text).first
-query("TextView index:0",:text)
-query("TextView id:'new_price'",:text)
-query("TextView id:'new_price'")
-query("TextView id:'new_price'",:text)
-query *
-query "*"
-query "*"
-query("* id:'new_price'",:text)
-query("* id:'new_price'",:text)
-query("* id:'new_price'",:text).first
-query("* id:'new_price'",:text).first.slice "R$"
-query("* id:'new_price'",:text).first.slice "R$"
+query("*", {:smoothScrollToPosition => 1})
+scroll_down
+scroll("* id:recycler_view", :down)
+scroll_to("* id:recycler_view", :down)
+scroll_down
+scroll_to("* id:recycler_view")
+scroll_to("* id:'recycler_view'", :down)
+scroll_to("* id:'recycler_view'", :down)
+scroll("* id:'recycler_view'", :down)
+scroll("* id:'recycler_view'", :down)
+scroll("* id:'recycler_view'", :down)
+scroll("* id:'recycler_view'", :down)
+scroll_down
+scroll_down
+scroll("*", :down)
+scroll(:down)
+scroll("*", :down)
+scroll("View", :down)
+exit
+exit
+scroll("* id:'recycler_view'", :down)
+scroll("* id:'recycler_view'", :down)
 exit
 start_test_server_in_background
-query("* id:'product_name'",:text)
-query("* id:'product_name'",:text)[0]
+query("* marked:'Total'")
+query("* marked:'Total'")
+query("* marked:'Total:'")
+query("* marked:'Total:'")
 exit
 start_test_server_in_background
-(query "* id:'text1'", :text)[0]
-(query "* id:'text1'", :text)[0]
-touch (query "* id:'text1'")[0]
-exit
-expect
+start_test_server_in_background
+reinstall_apps
 exit
 start_test_server_in_background
-touch (query "* id:'text1'")[0]
-(query "* id:'text1'", :text)[0]
-(query "* id:'text1'", :text)[0]
-(query "* id:'product_color'", :text)[0]
-(query "* id:'product_size'", :text)[0]
-(query "* id:'product_size'", :text)[0]
 exit
 start_test_server_in_background
-touch "ImageButton index:0"
-touch "ImageButton index:0"
-touch "* id:'action_cart'"
+query("* marked:'Total'")
+query("* marked:'Total'")
+query("* marked:'Total:'")
+query("* marked:'Total:'")
+exit
 exit

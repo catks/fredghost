@@ -75,9 +75,6 @@ Então(/^preencho o campo Email com o gerado e o dominio "([^"]*)"$/) do |domini
   keyboard_enter_text(@email)
 end
 
-Então(/^aguardo "([^"]*)" segundos$/) do |segundos|
-  sleep(segundos.to_i)
-end
 
 Então(/^verifico se estou logado com meu novo email$/) do
   assert_text @email

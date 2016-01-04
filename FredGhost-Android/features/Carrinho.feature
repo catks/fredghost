@@ -50,3 +50,37 @@ E posso visualizar os itens no carrinho
 E saio do carrinho
 E volto ao carrinho
 Então devo visualizar os mesmos itens de antes
+
+@frete
+Cenário: Calcular o frete e prazo de entrega
+Dado que estou no carrinho
+E posso visualizar os itens no carrinho
+Então deslizo até o fim do carrinho
+E clico em "Frete e prazo de entrega"
+E preencho o campo "CEP" com "05038-090"
+E aguardo "2" segundos
+E clico em "Enviar"
+E espero carregar
+Então posso visualizar visualizar o frete
+
+@cupom @wip
+Cenário: Inserir cupom de desconto
+Dado que estou no carrinho
+E posso visualizar os itens no carrinho
+Então deslizo até o fim do carrinho
+E clico em "Cupom de desconto"
+
+@vale @wip
+Cenário: Inserir vale troca
+Dado que estou no carrinho
+E posso visualizar os itens no carrinho
+
+@remover @cupom @wip
+Cenário: Remover cupom de desconto
+Dado que estou no carrinho
+E posso visualizar os itens no carrinho
+
+@remover @vale @wip
+Cenário: Remover vale-troca
+Dado que estou no carrinho
+E posso visualizar os itens no carrinho

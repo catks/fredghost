@@ -57,6 +57,13 @@ module Elementos
     Array_Cor = "* id:'product_color'"
     Array_Tamanho = "* id:'product_size'"
 
+    Subtotal = "* id:'subtotal'"
+    Frete = "* id:'shipping_cost'"
+    Desconto = "* id:'discount'"
+    Vale_Compras = "* id:'credit_ticket'"
+    Total = "* id:'total'"
+    Opcoes_De_Parcelamento = "* id:'financing'"
+
 
   end
 

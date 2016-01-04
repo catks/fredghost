@@ -131,6 +131,26 @@ Então(/^devo visualizar os mesmos itens de antes$/) do
     expect(produto.cor).to eq produto_cor
 
     index = index + 1
+    end
   end
 
-end
+  Então(/^espero carregar$/) do
+    wait_for_element_does_not_exist("ProgressBar", :timeout => 5)
+  end
+
+  Então(/^posso visualizar visualizar o frete$/) do
+    frete = (query Elementos::Carrinho::Frete, :text)[0]
+    frete.slice! "R$ " #Cortamos a string para obtermos apenas o número
+    puts "Valor Frete: " + frete
+    expect(frete).not_to be_empty
+  end
+
+  Então(/^deslizo até o fim do carrinho$/) do
+    q = query("* marked:'Total:'")
+    scrolls = 0
+      while (q.empty? && scrolls < 10)
+        scroll("* id:'recycler_view'", :down)
+        q = query("* marked:'Total:'")
+        scrolls = scrolls + 1
+      end
+  end
