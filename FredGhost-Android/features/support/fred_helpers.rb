@@ -15,7 +15,15 @@ module FredHelpers
   def esperar(segundos)
     sleep(segundos.to_i)
   end
-  
+
+  def carregarArrayDeItensCarrinho()
+    query "*"
+    steps %{
+    E posso visualizar os itens no carrinho
+    }
+
+  end
+
 end
 
 World(FredHelpers) #Inclui os metodos desso modulo para rodar nos testes do cucumber

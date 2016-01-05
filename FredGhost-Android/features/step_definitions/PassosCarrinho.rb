@@ -1,6 +1,5 @@
 # encoding: utf-8
 require 'calabash-android/calabash_steps'
-require 'minitest/autorun'
 
 Dado(/^que estou no carrinho$/) do
   sleep 3
@@ -42,8 +41,12 @@ Então(/^posso visualizar os itens no carrinho$/) do
     produto_tamanho = (query Elementos::Carrinho::Array_Tamanho, :text)[i]
     produto_tamanho.slice! "Tamanho: " #Cortamos a string para obtermos apenas o número
 
+    #Prazo de Entrega
+    prazo_entrega = (query Elementos::Carrinho::Array_Prazo_de_Entrega, :text)[i]
+
+
     #Para cada produto no carrinho vamos criar um novo objeto
-    @produtos_carrinho << Modelos::ItemCarrinho.new(produto_nome,produto_quantidade,produto_preco,produto_cor,produto_tamanho)
+    @produtos_carrinho << Modelos::ItemCarrinho.new(produto_nome,produto_quantidade,produto_preco,produto_cor,produto_tamanho,prazo_entrega)
 
 
   end
@@ -152,6 +155,18 @@ Então(/^devo visualizar os mesmos itens de antes$/) do
     expect(frete).not_to eq(0.0)
   end
 
+  Então(/^visualizo o prazo de cada item do carrinho$/) do
+    carregarArrayDeItensCarrinho
+    expect(@produtos_carrinho).not_to be_empty #Espera que o array de itens do carrinho tenha
+    puts "Prazos:"
+    @produtos_carrinho.each do |item|
+      puts item.prazo_de_entrega
+      expect(item.prazo_de_entrega).not_to be_nil #Espera que o item tenha um prazo
+    end
+
+  end
+
+
   Então(/^posso visualizar o desconto$/) do
     desconto = (query Elementos::Carrinho::Desconto, :text)[0]
     desconto.slice! "R$ " #Cortamos a string para obtermos apenas o número
@@ -170,6 +185,17 @@ Então(/^devo visualizar os mesmos itens de antes$/) do
       end
   end
 
+  Então(/^deslizo até o início do carrinho$/) do
+    q = query("* marked:'Deslize os itens para remover do carrinho'")
+    scrolls = 0
+      while (q.empty? && scrolls < 10)
+        scroll("* id:'recycler_view'", :up)
+        q = query("* marked:'Deslize os itens para remover do carrinho'")
+        scrolls = scrolls + 1
+      end
+  end
+
+
 Então(/^o desconto deve ter sido removido$/) do
   desconto = (query Elementos::Carrinho::Desconto, :text).first
   expect(desconto).to eq("R$ 0,00")
@@ -186,4 +212,20 @@ end
 Então(/^o Vale\-Compras deve ter sido removido$/) do
   valor_vale = (query Elementos::Carrinho::Vale_Compras, :text).first
   expect(valor_vale).to eq("R$ 0,00")
+end
+
+Dado(/^que há itens no carrinho$/) do
+  itens = (query Elementos::Carrinho::Array_Nome_Produto)
+  expect(itens).not_to be_empty
+end
+
+Então(/^tiro todos os itens do carrinho$/) do
+  itens = query "* id:'product_item'"
+  itens.each do |item|
+    pan("* id:'product_item'", :right)
+    sleep 3
+  end
+
+  itens = query "* id:'product_item'"
+  expect(itens).to be_empty
 end

@@ -56,7 +56,8 @@ module Elementos
     Array_Precos = "* id:'new_price'"
     Array_Cor = "* id:'product_color'"
     Array_Tamanho = "* id:'product_size'"
-
+    Array_Prazo_de_Entrega = "* id:'product_shipping'"
+    
     Subtotal = "* id:'subtotal'"
     Frete = "* id:'shipping_cost'"
     Desconto = "* id:'discount'"

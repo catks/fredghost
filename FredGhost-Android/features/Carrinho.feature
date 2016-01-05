@@ -2,7 +2,7 @@
 @carrinho
 Funcionalidade: Validar Carrinho
 
-@reset @quantidade @itens_diferentes @exibicao_produtos @refresh @frete @cupom @vale
+@reset @quantidade @itens_diferentes @exibicao_produtos @refresh @frete @cupom @vale @apagar
 Cenário: Adicionando Itens
 
   Dado que estou na tela inicial
@@ -63,6 +63,8 @@ E aguardo "2" segundos
 E clico em "Enviar"
 E espero carregar
 Então posso visualizar o frete
+E deslizo até o início do carrinho
+E visualizo o prazo de cada item do carrinho
 
 @cupom
 Cenário: Inserir cupom de desconto
@@ -96,3 +98,9 @@ Então posso visualizar o Vale-Compras
 E clico em "Remover vale-Compras"
 Então espero carregar
 E o Vale-Compras deve ter sido removido
+
+@apagar
+Cenário: Apagar itens
+Dado que estou no carrinho
+E que há itens no carrinho
+Então tiro todos os itens do carrinho
