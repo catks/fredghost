@@ -5,6 +5,12 @@ require 'minitest/autorun'
 Dado(/^que estou no carrinho$/) do
   sleep 3
   #assert_equal("Carrinho",query("TextView index:0",:text).first)
+  pagina = query("TextView index:0",:text).first
+  if(pagina != "Carrinho")
+    touch "* id:'menu_notification'"
+    sleep 2 #Espera abrir a página do carrinho
+  end
+
   expect(query("TextView index:0",:text).first).to  eq "Carrinho"
 
 end
@@ -163,3 +169,21 @@ Então(/^devo visualizar os mesmos itens de antes$/) do
         scrolls = scrolls + 1
       end
   end
+
+Então(/^o desconto deve ter sido removido$/) do
+  desconto = (query Elementos::Carrinho::Desconto, :text).first
+  expect(desconto).to eq("R$ 0,00")
+end
+
+Então(/^posso visualizar o Vale\-Compras$/) do
+  valor_vale = (query Elementos::Carrinho::Vale_Compras, :text).first
+  valor_vale.slice! "R$ " #Cortamos a string para obtermos apenas o número
+  valor_vale = valor_vale.to_f
+  puts "Valor do Vale: " + valor_vale.to_s
+  expect(valor_vale).not_to eq(0.0)
+end
+
+Então(/^o Vale\-Compras deve ter sido removido$/) do
+  valor_vale = (query Elementos::Carrinho::Vale_Compras, :text).first
+  expect(valor_vale).to eq("R$ 0,00")
+end

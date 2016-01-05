@@ -1,8 +1,9 @@
 # language: pt
-@carrinho @reset
+@carrinho
 Funcionalidade: Validar Carrinho
 
-Contexto: Adicionando Itens
+@reset @quantidade @itens_diferentes @exibicao_produtos @refresh @frete @cupom @vale
+Cenário: Adicionando Itens
 
   Dado que estou na tela inicial
   Quando clicar em pesquisar
@@ -73,18 +74,25 @@ E preencho o campo "Cupom de desconto" com "15OFFCONS"
 E clico em "Enviar"
 E espero carregar
 Então posso visualizar o desconto
+E clico em "Remover cupom de desconto"
+Então espero carregar
+E o desconto deve ter sido removido
 
-@vale @wip
-Cenário: Inserir vale troca
+
+@vale
+Cenário: Inserir cupom de desconto
+Dado que estou na tela inicial
+Quando clicar no menu lateral
+Então clico em "Entre ou cadastre-se, clique aqui!"
+Então devo me logar com email "mobile@fredautomation.com.br" e com senha "123"
 Dado que estou no carrinho
 E posso visualizar os itens no carrinho
-
-@remover @cupom @wip
-Cenário: Remover cupom de desconto
-Dado que estou no carrinho
-E posso visualizar os itens no carrinho
-
-@remover @vale @wip
-Cenário: Remover vale-troca
-Dado que estou no carrinho
-E posso visualizar os itens no carrinho
+Então deslizo até o fim do carrinho
+E clico em "Vale-Compras"
+E preencho o campo "Vale-Compras" com "62b7e3"
+E clico em "Enviar"
+E espero carregar
+Então posso visualizar o Vale-Compras
+E clico em "Remover vale-Compras"
+Então espero carregar
+E o Vale-Compras deve ter sido removido
