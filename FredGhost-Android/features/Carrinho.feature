@@ -61,14 +61,18 @@ E preencho o campo "CEP" com "05038-090"
 E aguardo "2" segundos
 E clico em "Enviar"
 E espero carregar
-Então posso visualizar visualizar o frete
+Então posso visualizar o frete
 
-@cupom @wip
+@cupom
 Cenário: Inserir cupom de desconto
 Dado que estou no carrinho
 E posso visualizar os itens no carrinho
 Então deslizo até o fim do carrinho
 E clico em "Cupom de desconto"
+E preencho o campo "Cupom de desconto" com "15OFFCONS"
+E clico em "Enviar"
+E espero carregar
+Então posso visualizar o desconto
 
 @vale @wip
 Cenário: Inserir vale troca

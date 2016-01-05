@@ -138,11 +138,20 @@ Então(/^devo visualizar os mesmos itens de antes$/) do
     wait_for_element_does_not_exist("ProgressBar", :timeout => 5)
   end
 
-  Então(/^posso visualizar visualizar o frete$/) do
+  Então(/^posso visualizar o frete$/) do
     frete = (query Elementos::Carrinho::Frete, :text)[0]
     frete.slice! "R$ " #Cortamos a string para obtermos apenas o número
-    puts "Valor Frete: " + frete
-    expect(frete).not_to be_empty
+    frete = frete.to_f
+    puts "Valor Frete: " + frete.to_s
+    expect(frete).not_to eq(0.0)
+  end
+
+  Então(/^posso visualizar o desconto$/) do
+    desconto = (query Elementos::Carrinho::Desconto, :text)[0]
+    desconto.slice! "R$ " #Cortamos a string para obtermos apenas o número
+    desconto = desconto.to_f
+    puts "Valor Desconto: " + desconto.to_s
+    expect(desconto).not_to eq(0.0)
   end
 
   Então(/^deslizo até o fim do carrinho$/) do
