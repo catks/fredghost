@@ -12,24 +12,6 @@ Então(/^posso visualizar o item "([^"]*)" no carrinho$/) do |nomeProduto|
   assert_text nomeProduto
 end
 
-
-Então(/^devo me logar(?: com email "([^"]*)" e com senha "([^"]*)")?$/) do |email,senha|
-
-  #valores default
-  email ||= "prd-fred.automation@gmail.com"
-  senha ||= "123"
-  #
-
-  wait_for(timeout: 10) { element_exists '* marked:"Email"' }
-  tap_mark 'Email'
-  keyboard_enter_text(email)
-  tap_mark 'Senha'
-  keyboard_enter_text(senha)
-  tap_mark 'Entrar'
-end
-
-
-
 Então(/^selecionar a opção de entrega "(Entrega Convencional|Entrega Agendada)"$/) do |tipoEntrega|
 #Então(/^selecionar a opção de entrega "([^"]*)"$/) do |tipoEntrega|
   wait_for(timeout: 10) { element_exists "* id:'radio'" }

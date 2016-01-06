@@ -1,50 +1,50 @@
-scroll("*", :down)
-scroll("View", :down)
 exit
-exit
-scroll("* id:'recycler_view'", :down)
-scroll("* id:'recycler_view'", :down)
+query "*"
 exit
 start_test_server_in_background
-query("* marked:'Total'")
-query("* marked:'Total'")
-query("* marked:'Total:'")
-query("* marked:'Total:'")
+query "*"
 exit
 start_test_server_in_background
-start_test_server_in_background
-reinstall_apps
+query "* id:'name'"
 exit
 start_test_server_in_background
+query "* id:'email'"
+query "* id:'email'" , :text
+exit
+ls
+querY "*"
+start_test_server_in_background
+query "ActionBar$Tab"
+query "ActionBar"
+query "*"
+query "* marked:'Meus Pedidos'" 
+query "* marked:'Meus Pedidos'" 
+tap_mark 'Meus pedidos'
+query "* marked:'Meus pedidos'" 
+element_exists "AppCompatTextView"
+query "AppCompatTextView"
+element_exists "* marked:'Meus pedidos'"
+element_exists "* marked:'Meus pedido'"
+query "* marked:'Meus pedidos'"
+element_exists "* marked:'Meus pedidos'"
+pan "LinearLayout" , :right
+pan "LinearLayout" , :left
+pan "LinearLayout" , :left
+pan "LinearLayout" , :left
 exit
 start_test_server_in_background
-query("* marked:'Total'")
-query("* marked:'Total'")
-query("* marked:'Total:'")
-query("* marked:'Total:'")
 exit
+query "* "
+query("* {text CONTAINS 'Nome.'}")
+query("* {text CONTAINS 'N.'}")
+query("* {text CONTAINS 'c.'}")
+query("* {text CONTAINS 'c'}")
+query("* {text CONTAINS 'Nome.'}")
+tap_mark 'Sobrenome'
+keyboard_enter_text "2"
+keyboard_enter_text "2"
+keyboard_enter_text "d"
+clear_text
 exit
-query "* id:'product_shipping'", :text
-(query "* id:'product_shipping'", :text)[0]
-exit
-(query "* id:'product_s'", :text)[0]
-exit
-pan("* id:'product_item'", :right)
-start_test_server_in_background
-pan("* id:'product_item'", :right)
-pan("* id:'product_item'", :right)
-pan("* id:'product_item'", :right)
-query("id:'prosuct_item'")
-query("id:'product_item'")
-query("* id:'product_item'")
-pan("* id:'product_name'", :right)
-pan("* id:'product_name'", :right)
-pan("* id:'product_name'", :right)[1]
-pan(query "* id:'product_name'")[1], :right)
-pan((query "* id:'product_name'")[1], :right)
-pan((query "* id:'product_name'")[1], :right)
-pan((query "* id:'product_name'")[0], :right)
-pan((query "* id:'product_name'")[0] , :right)
-exit
-query("id:'product_item'")
+exitexit
 exit

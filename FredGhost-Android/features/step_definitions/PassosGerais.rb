@@ -23,6 +23,7 @@ Quando(/^preencho a busca com "([^"]*)"$/) do |texto|
   press_enter_button
 end
 
+
 Então(/^posso clicar no primeiro item$/) do
   wait_for(timeout: 10) { element_exists '* id:"product_item"' }
   #check_element_exists("framelayout index:0")
@@ -62,6 +63,19 @@ Então(/^preencho o campo "([^"]*)" com "([^"]*)"$/) do |campo, texto|
   keyboard_enter_text(texto)
   hide_soft_keyboard #Retira o teclado da tela se estiver visivel
 
+end
+
+Então(/^edito o campo "([^"]*)" com "([^"]*)"$/) do |campo, texto|
+  tap_mark campo
+  clear_text
+  keyboard_enter_text(texto)
+  hide_soft_keyboard #Retira o teclado da tela se estiver visivel
+  sleep 1
+end
+
+Então(/^seleciono o campo "([^"]*)" como "([^"]*)"$/) do |campo, opcao|
+  tap_mark campo
+  tap_mark opcao
 end
 
 Então(/^aguardo "([^"]*)" segundos$/) do |segundos|

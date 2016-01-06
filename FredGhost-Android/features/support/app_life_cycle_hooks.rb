@@ -8,7 +8,7 @@ Before do |scenario|
   if scenario_tags.include?('@reset')
      clear_app_data
   end
-  
+
   start_test_server_in_background
 
 end

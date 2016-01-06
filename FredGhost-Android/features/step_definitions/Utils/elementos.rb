@@ -57,7 +57,7 @@ module Elementos
     Array_Cor = "* id:'product_color'"
     Array_Tamanho = "* id:'product_size'"
     Array_Prazo_de_Entrega = "* id:'product_shipping'"
-    
+
     Subtotal = "* id:'subtotal'"
     Frete = "* id:'shipping_cost'"
     Desconto = "* id:'discount'"
@@ -67,6 +67,26 @@ module Elementos
 
 
   end
+
+  module MenuHamburger
+    Email = "* id:'email'"
+  end
+
+  module MinhaConta
+
+    module MeusDados
+      Nome= "* id:'name'"
+      Email = "* id:'email'"
+      RG = "* id:'register'"
+      Cpf = "* id:'document'"
+      Data_De_Nascimento = "* id:'birthday'"
+      Sexo = "* id:'gender'"
+      Telefone = "* id:'phone'"
+      Telefone_Celular = "* id:'cell_phone'"
+    end
+  end
+
+
 
 
 
