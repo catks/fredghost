@@ -2,7 +2,7 @@
 @perfil @minha_conta
 Funcionalidade: Validar Perfil
 
-@entrar @reset @meus_dados @alterar @skip_all_if_failed
+@entrar @reset @meus_dados @alterar @skip_feature_if_failed
 Cenário: Entrar
 
 Dado que estou na tela inicial
@@ -11,6 +11,7 @@ Então clico em "Entre ou cadastre-se, clique aqui!"
 E devo me logar com email "prd-fred.automation@gmail.com" e com senha "123"
 Quando clicar no menu lateral
 Então devo ver que estou logado
+
 
 @meus_dados
 Cenário: Verificar Meus dados / Minha conta

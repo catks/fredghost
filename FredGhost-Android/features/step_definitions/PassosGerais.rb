@@ -81,3 +81,8 @@ end
 Então(/^aguardo "([^"]*)" segundos$/) do |segundos|
   sleep(segundos.to_i)
 end
+
+Então(/^o cucumber deve dar erro$/) do
+  expect(true).to be false
+  # TODO: Melhorar o codigo para falhar
+end

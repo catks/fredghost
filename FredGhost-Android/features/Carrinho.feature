@@ -2,7 +2,7 @@
 @carrinho
 Funcionalidade: Validar Carrinho
 
-@reset @quantidade @itens_diferentes @exibicao_produtos @refresh @frete @cupom @vale @apagar
+@reset @quantidade @itens_diferentes @exibicao_produtos @refresh @frete @cupom @vale @apagar @skip_feature_if_failed
 Cenário: Adicionando Itens
 
   Dado que estou na tela inicial
