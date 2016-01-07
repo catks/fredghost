@@ -24,6 +24,9 @@ module FredHelpers
 
   end
 
+  def esperar_teclado_sumir()
+    sleep 2 #TODO : melhorar
+  end
 end
 
 World(FredHelpers) #Inclui os metodos desso modulo para rodar nos testes do cucumber

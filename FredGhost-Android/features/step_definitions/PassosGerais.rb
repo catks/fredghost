@@ -62,6 +62,7 @@ Então(/^preencho o campo "([^"]*)" com "([^"]*)"$/) do |campo, texto|
   tap_mark campo
   keyboard_enter_text(texto)
   hide_soft_keyboard #Retira o teclado da tela se estiver visivel
+  esperar_teclado_sumir
 
 end
 
@@ -70,7 +71,7 @@ Então(/^edito o campo "([^"]*)" com "([^"]*)"$/) do |campo, texto|
   clear_text
   keyboard_enter_text(texto)
   hide_soft_keyboard #Retira o teclado da tela se estiver visivel
-  sleep 1
+  esperar_teclado_sumir
 end
 
 Então(/^seleciono o campo "([^"]*)" como "([^"]*)"$/) do |campo, opcao|
@@ -85,4 +86,8 @@ end
 Então(/^o cucumber deve dar erro$/) do
   expect(true).to be false
   # TODO: Melhorar o codigo para falhar
+end
+
+Então(/^não devo ver uma mensagem de erro$/) do
+  expect(element_does_not_exist("* id:'snackbar_text'")).to be true
 end

@@ -29,7 +29,7 @@ E que meu Sexo é "Masculino"
 E que meu Telefone é "(11) 5555-5551"
 E que meu Telefone Celular é "(11) 99999-9991"
 
-@alterar
+@alterar @dados
 Cenário: Alterar Dados
 
 Dado que estou na tela inicial
@@ -61,6 +61,28 @@ Então aguardo "2" segundos
 E clico em "Atualizar"
 Então espero carregar
 E visualizo meus dados alterados
+
+@alterar @senha
+Cenário: Alterar Senha
+
+Dado que estou na tela inicial
+Quando clicar no menu lateral
+E clico em "Minha conta"
+E espero carregar
+E clico em "Alterar e-mail e/ou senha"
+E preencho o campo "Nova senha" com "1234"
+E preencho o campo "Repita a nova senha" com "1234"
+Então coloco minha senha atual "123"
+E clico em "OK"
+Então espero carregar
+E não devo ver uma mensagem de erro
+E clico em sair
+Quando clicar no menu lateral
+Então clico em "Entre ou cadastre-se, clique aqui!"
+E devo me logar com email "prd-fred.automation@gmail.com" e com senha "1234"
+Quando clicar no menu lateral
+Então devo ver que estou logado
+Então mudo a minha senha para "123" novamente
 
 
 

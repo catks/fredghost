@@ -121,3 +121,29 @@ Então(/^visualizo meus dados alterados$/) do
   expect(@pessoa.celular).not_to eq @pessoa_antiga.celular
 
 end
+
+Então(/^clico em sair$/) do
+  touch Elementos::MinhaConta::Sair
+  tap_mark "Sim"
+end
+
+Então(/^coloco minha senha atual "([^"]*)"$/) do |senha|
+  touch Elementos::MinhaConta::MeusDados::Senha_Atual
+  keyboard_enter_text(senha)
+  hide_soft_keyboard #Retira o teclado da tela se estiver visivel
+  esperar_teclado_sumir
+end
+
+Então(/^mudo a minha senha para "([^"]*)" novamente$/) do |nova_senha|
+steps %{
+  E clico em "Minha conta"
+  E espero carregar
+  E clico em "Alterar e-mail e/ou senha"
+  E preencho o campo "Nova senha" com "#{nova_senha}"
+  E preencho o campo "Repita a nova senha" com "#{nova_senha}"
+  Então coloco minha senha atual "#{@senha}"
+  E clico em "OK"
+  Então espero carregar
+  E não devo ver uma mensagem de erro
+}
+end

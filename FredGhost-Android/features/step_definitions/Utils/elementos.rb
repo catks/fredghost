@@ -74,6 +74,8 @@ module Elementos
 
   module MinhaConta
 
+    Sair= "* id:'action_sign_out'"
+
     module MeusDados
       Nome= "* id:'name'"
       Email = "* id:'email'"
@@ -83,6 +85,9 @@ module Elementos
       Sexo = "* id:'gender'"
       Telefone = "* id:'phone'"
       Telefone_Celular = "* id:'cell_phone'"
+
+      #Alterar Email ou senha
+      Senha_Atual = "* id:'current_password'"
     end
   end
 

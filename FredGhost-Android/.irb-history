@@ -1,50 +1,50 @@
+reinstall_apps
+start_test_server_in_background
+query("* css:'#password'")
+query("* css:'password'")
+query("* css")
+query("* marked:'Confirme sua senha'")
+query("* marked:'Confirme sua senha'")
 exit
+start_test_server_in_background
+tap_mark "Confirme a senha atual"
+query "* marked:'Confirme a senha atual'"
+query "EditText marked:'Confirme a senha atual'"
+query "MaterialEditText marked:'Confirme a senha atual'"
+query "MaterialEditText"
+query "EditText"
 query "*"
+query "* marked:'Pesquisar'"
+query "* marked:'Pesquisar'"
+query "* marked:'Pesquisar...'"
+query "* marked:'Pesquisar..'"
+query "* id:'search_src_text'"
 exit
+query "* marked:'Ocorreu uma falha ao atualizar os dados do usuário'"
+query "* marked:'Ocorreu uma falha ao atualizar os dados do usuário'"
 start_test_server_in_background
-query "*"
-exit
-start_test_server_in_background
-query "* id:'name'"
-exit
-start_test_server_in_background
-query "* id:'email'"
-query "* id:'email'" , :text
-exit
-ls
-querY "*"
-start_test_server_in_background
-query "ActionBar$Tab"
-query "ActionBar"
-query "*"
-query "* marked:'Meus Pedidos'" 
-query "* marked:'Meus Pedidos'" 
-tap_mark 'Meus pedidos'
-query "* marked:'Meus pedidos'" 
-element_exists "AppCompatTextView"
-query "AppCompatTextView"
-element_exists "* marked:'Meus pedidos'"
-element_exists "* marked:'Meus pedido'"
-query "* marked:'Meus pedidos'"
-element_exists "* marked:'Meus pedidos'"
-pan "LinearLayout" , :right
-pan "LinearLayout" , :left
-pan "LinearLayout" , :left
-pan "LinearLayout" , :left
-exit
-start_test_server_in_background
-exit
-query "* "
-query("* {text CONTAINS 'Nome.'}")
-query("* {text CONTAINS 'N.'}")
-query("* {text CONTAINS 'c.'}")
-query("* {text CONTAINS 'c'}")
-query("* {text CONTAINS 'Nome.'}")
-tap_mark 'Sobrenome'
-keyboard_enter_text "2"
-keyboard_enter_text "2"
-keyboard_enter_text "d"
-clear_text
+query "* marked:'Ocorreu uma falha ao atualizar os dados do usuário'"
+query "* marked:'Ocorreu uma falha ao atualizar os dados do usuário'"
+query "* marked:'Ocorreu uma falha ao atualizar os dados do usuário'"
+query "* id:'snackbar_text'"
+query "* id:'snackbar_text'"
 exit
 exitexit
+exit
+reinstall_
+reinstall_apps
+exit
+exit
+query "*"
+start_test_server_in_background
+query "*"
+query ""* id:'action_sign_out'""
+query "* id:'action_sign_out'"
+touch "* id:'action_sign_out'"
+exit
+element_exist("* id:'password'")
+element_exists("* id:'password'")
+element_exists("* id:'passwords'")
+element_does_not_exist("* id:'password'")
+element_does_not_exist("* id:'passwords'")
 exit
