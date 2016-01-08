@@ -9,7 +9,7 @@ Esquema do Cenário: Posso Finalizar Pedidos com Visa
   Então clico em "Entre ou cadastre-se, clique aqui!"
   Então devo me logar com email "<email>" e com senha "<senha>"
   Quando clicar em pesquisar
-  E preencho a busca com "Tenis Bout"
+  E preencho a busca com "Tenis Bout Sense"
   Então posso clicar no primeiro item
   E escolho o tamanho "39"
   E clico no botão circular para adicionar ao Carrinho
@@ -46,7 +46,7 @@ Quando clicar no menu lateral
 Então clico em "Entre ou cadastre-se, clique aqui!"
 Então devo me logar
 Quando clicar em pesquisar
-E preencho a busca com "Tenis Bout"
+E preencho a busca com "Tenis Bout Sense"
 Então posso clicar no primeiro item
 E escolho o tamanho "39"
 E clico no botão circular para adicionar ao Carrinho
@@ -71,7 +71,7 @@ Então clico em "Entre ou cadastre-se, clique aqui!"
 Então devo me logar
 
 Quando clicar em pesquisar
-E preencho a busca com "Tenis Bout"
+E preencho a busca com "Tenis Bout Sense"
 Então posso clicar no primeiro item
 E escolho o tamanho "39"
 E clico no botão circular para adicionar ao Carrinho
@@ -104,7 +104,7 @@ Quando clicar no menu lateral
 Então clico em "Entre ou cadastre-se, clique aqui!"
 Então devo me logar
 Quando clicar em pesquisar
-E preencho a busca com "Tenis Bout"
+E preencho a busca com "Tenis Bout Sense"
 Então posso clicar no primeiro item
 E escolho o tamanho "39"
 E clico no botão circular para adicionar ao Carrinho
@@ -126,7 +126,7 @@ Quando clicar no menu lateral
 Então clico em "Entre ou cadastre-se, clique aqui!"
 Então devo me logar
 Quando clicar em pesquisar
-E preencho a busca com "Tenis Bout"
+E preencho a busca com "Tenis Bout Sense"
 Então posso clicar no primeiro item
 E escolho o tamanho "39"
 E clico no botão circular para adicionar ao Carrinho

@@ -61,7 +61,7 @@ Então(/^a quantidade e o preço do item "([^"]*)" deverá ter mudado$/) do |num
   sleep 2
   indice = num_item.to_i - 1
   preco = (query Elementos::Carrinho::Array_Precos, :text)[indice]
-  expect(preco).not_to  eq @produtos_carrinho[indice]
+  expect(preco).not_to  eq @produtos_carrinho[indice].preco
   puts "Valor Obtido: #{preco} Valor antes de alterar a quantidade: #{@produtos_carrinho[indice].preco}"
 end
 
@@ -141,10 +141,6 @@ Então(/^devo visualizar os mesmos itens de antes$/) do
 
     index = index + 1
     end
-  end
-
-  Então(/^espero carregar$/) do
-    wait_for_element_does_not_exist("ProgressBar", :timeout => 5)
   end
 
   Então(/^posso visualizar o frete$/) do

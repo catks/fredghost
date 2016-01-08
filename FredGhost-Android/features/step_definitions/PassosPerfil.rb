@@ -147,3 +147,16 @@ steps %{
   E não devo ver uma mensagem de erro
 }
 end
+
+Então(/^mudo o meu email para "([^"]*)"$/) do |email|
+steps %{
+  E clico em "Minha conta"
+  E espero carregar
+  E clico em "Alterar e-mail e/ou senha"
+  E preencho o campo "Novo e-mail" com "#{email}"
+  Então coloco minha senha atual "#{@senha}"
+  E clico em "OK"
+  Então espero carregar
+  E não devo ver uma mensagem de erro
+}
+end

@@ -25,14 +25,15 @@ end
 
 Então(/^selecionar a forma de pagamento como "([^"]*)"$/) do |tipoPagamento|
 
+  # TODO: Melhorar o jeito de achar a radio certa
   sleep(3)
   wait_for(timeout: 15) { element_exists "* id:'radio'" }
-
   if tipoPagamento.downcase.include? "boleto"
+    check_element_exists("* marked:'Boleto Bancário'")
     touch(query("* id:'radio'")[2])
-  elsif tipoPagamento.downcase.include? "cartão"
 
-    if (query("Boleto").empty?) # Se não tiver a opção de boleto
+  elsif tipoPagamento.downcase.include? "cartão"
+    if (element_does_not_exist("* marked:'Boleto Bancário'")) # Se não tiver a opção de boleto
       touch(query("* id:'radio'")[2])
     else
       touch(query("* id:'radio'")[3])
@@ -85,7 +86,9 @@ Então(/^preencho o dados do cartão com Titular: "([^"]*)", N° do cartão: "([
 end
 
 Então(/^vejo a tela de resumo de compra$/) do
-  wait_for(timeout: 60) { element_exists "* marked:'Resumo de Compra'" }
+  wait_for_element_does_not_exist("ProgressBar", :timeout => 60)
+  #check_element_does_not_exist("* id:'snackbar_text'")
+  #wait_for(timeout: 60) { element_exists "* marked:'Resumo de Compra'" }
   assert_text('Resumo de Compra')
   assert_text('Pedido Concluído')
 end

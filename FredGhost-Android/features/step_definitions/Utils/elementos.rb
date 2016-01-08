@@ -91,7 +91,10 @@ module Elementos
     end
   end
 
-
+  module Checkout
+    Boleto = "* marked:'Boleto Bancário'"
+    Cartao = "* marked:'Cartão de Crédito'"
+  end
 
 
 

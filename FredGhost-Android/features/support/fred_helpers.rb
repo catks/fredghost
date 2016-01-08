@@ -23,10 +23,14 @@ module FredHelpers
     }
 
   end
-
   def esperar_teclado_sumir()
     sleep 2 #TODO : melhorar
   end
+  def esconder_teclado()
+    hide_soft_keyboard #Retira o teclado da tela se estiver visivel
+    esperar_teclado_sumir
+  end
+
 end
 
 World(FredHelpers) #Inclui os metodos desso modulo para rodar nos testes do cucumber

@@ -91,3 +91,7 @@ end
 Então(/^não devo ver uma mensagem de erro$/) do
   expect(element_does_not_exist("* id:'snackbar_text'")).to be true
 end
+
+Então(/^espero carregar$/) do
+  wait_for_element_does_not_exist("ProgressBar", :timeout => 5)
+end

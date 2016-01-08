@@ -1,50 +1,50 @@
-reinstall_apps
-start_test_server_in_background
-query("* css:'#password'")
-query("* css:'password'")
-query("* css")
-query("* marked:'Confirme sua senha'")
-query("* marked:'Confirme sua senha'")
+query("* id:'price'" , :text)[0]
+query("* id:'price'" , :text)[-1]
+query("* id:'price'" , :text)[0]
 exit
-start_test_server_in_background
-tap_mark "Confirme a senha atual"
-query "* marked:'Confirme a senha atual'"
-query "EditText marked:'Confirme a senha atual'"
-query "MaterialEditText marked:'Confirme a senha atual'"
-query "MaterialEditText"
-query "EditText"
+query "Button"
 query "*"
-query "* marked:'Pesquisar'"
-query "* marked:'Pesquisar'"
-query "* marked:'Pesquisar...'"
-query "* marked:'Pesquisar..'"
-query "* id:'search_src_text'"
+query "AppCompatButton"
+tap_mark "Entrar"
+tap_mark "Entrar"
+touch  "* marked:'Entrar'"
 exit
-query "* marked:'Ocorreu uma falha ao atualizar os dados do usuário'"
-query "* marked:'Ocorreu uma falha ao atualizar os dados do usuário'"
+query "*"
+check_element_exists("* id:'price'")
+check_element_exists("* id:'price'")
+check_element_exists("* id:'price'")
+check_element_exists("* id:'price'")
+check_element_exists("* id:'price'")
+query "* id:'sku'"
+check_element_exists("* id:'sku'")
+element_exists("* id:'sku'")
+expect(element_exists("* id:'sku'")).to be true
+require 'rspec'
+expect(element_exists("* id:'sku'")).to be true
+require 'calabash-android/calabash_steps'
+wxit
+exit
+query "*"
 start_test_server_in_background
-query "* marked:'Ocorreu uma falha ao atualizar os dados do usuário'"
-query "* marked:'Ocorreu uma falha ao atualizar os dados do usuário'"
-query "* marked:'Ocorreu uma falha ao atualizar os dados do usuário'"
+query("* marked:'Boleto'")
+query("* marked:'Boleto Bancário'")
+query("* marked:'Boleto Bancário'")
+query("* marked:'Boleto Bancário'")
+element_exists("* marked:'Boleto Bancário'")
+element_exists("* marked:'Boleto Bancário'")
+exit
+query "LinearLayout marked:'Boleto Bancário'"
+query "* marked:'Boleto Bancário'"
+touch "* id:'financing_title'"
+touch "* id:'financing_title'"
+touch "* id:'financing_title'"
+query "LinearLayout"
+exit
 query "* id:'snackbar_text'"
 query "* id:'snackbar_text'"
-exit
-exitexit
-exit
-reinstall_
-reinstall_apps
-exit
-exit
-query "*"
 start_test_server_in_background
-query "*"
-query ""* id:'action_sign_out'""
-query "* id:'action_sign_out'"
-touch "* id:'action_sign_out'"
+query "* id:'snackbar_text'" , :text
+query "* id:'snackbar_text'" 
 exit
-element_exist("* id:'password'")
-element_exists("* id:'password'")
-element_exists("* id:'passwords'")
-element_does_not_exist("* id:'password'")
-element_does_not_exist("* id:'passwords'")
+reinstall_apps
 exit
