@@ -89,6 +89,15 @@ module Elementos
       #Alterar Email ou senha
       Senha_Atual = "* id:'current_password'"
     end
+
+    module MeusEnderecos
+      Nome_Endereco = "* id:'title'"
+      Rua_Numero = "* id:'line1'"
+      Bairro_Cep = "* id:'line2'"
+      Cidade_Estado = "* id:'line3'"
+      Telefone = "* id:'line4'"
+    end
+
   end
 
   module Checkout

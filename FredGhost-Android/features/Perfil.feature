@@ -2,7 +2,7 @@
 @perfil @minha_conta
 Funcionalidade: Validar Perfil
 
-@entrar @reset @meus_dados @alterar @email @skip_feature_if_failed
+@entrar @reset @meus_dados @alterar @email @meus_enderecos @skip_feature_if_failed
 Cenário: Entrar
 
 Dado que estou na tela inicial
@@ -114,6 +114,16 @@ E devo me logar com email "prd-fred.automation@gmail.com" e com senha "1234"
 Quando clicar no menu lateral
 Então devo ver que estou logado
 Então mudo a minha senha para "123" novamente
+
+
+@meus_enderecos
+Cenário: Verificar Meus Endereços
+
+Dado que estou na tela inicial
+Quando clicar no menu lateral
+E clico em "Meus endereços"
+E espero carregar
+Então visualizo meus endereços
 
 
 
