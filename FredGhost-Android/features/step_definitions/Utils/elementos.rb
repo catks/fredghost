@@ -96,6 +96,16 @@ module Elementos
       Bairro_Cep = "* id:'line2'"
       Cidade_Estado = "* id:'line3'"
       Telefone = "* id:'line4'"
+      Endereco_Container = "* id:'container'"
+    end
+
+    module Meus_Pedidos
+      Numero_Do_Pedido = "* id:'order_number'"
+      Metodo_De_Pagamento = "* id:'payment'"
+      Preco = "* id:'price'"
+      Data="* id:'order_date'"
+      Status = "* id:'status'"
+
     end
 
   end

@@ -162,22 +162,26 @@ steps %{
 end
 
 Então(/^visualizo meus endereços$/) do
-  nome_endereco = (query Elementos::MinhaConta::MeusEnderecos::Nome_Endereco , :text).first
-  rua_numero = (query Elementos::MinhaConta::MeusEnderecos::Rua_Numero , :text).first
-  bairro_cep = (query Elementos::MinhaConta::MeusEnderecos::Bairro_Cep , :text).first
-  cidade_estado = (query Elementos::MinhaConta::MeusEnderecos::Cidade_Estado , :text).first
-  telefone = (query Elementos::MinhaConta::MeusEnderecos::Telefone , :text).first
-  puts %{
-    Endereço:
-    #{nome_endereco}
-    #{rua_numero}
-    #{bairro_cep}
-    #{cidade_estado}
-    #{telefone}
-  }
-  expect(nome_endereco).not_to be_empty
-  expect(rua_numero).not_to be_empty
-  expect(bairro_cep).not_to be_empty
-  expect(cidade_estado).not_to be_empty
-  expect(telefone).not_to be_empty
+
+  enderecos = (query Elementos::MinhaConta::MeusEnderecos::Endereco_Container)
+  for i in (0...enderecos.size) # 0 < 
+    nome_endereco = (query Elementos::MinhaConta::MeusEnderecos::Nome_Endereco , :text)[i]
+    rua_numero = (query Elementos::MinhaConta::MeusEnderecos::Rua_Numero , :text)[i]
+    bairro_cep = (query Elementos::MinhaConta::MeusEnderecos::Bairro_Cep , :text)[i]
+    cidade_estado = (query Elementos::MinhaConta::MeusEnderecos::Cidade_Estado , :text)[i]
+    telefone = (query Elementos::MinhaConta::MeusEnderecos::Telefone , :text)[i]
+    puts %{
+      Endereço #{i+1}:
+      #{nome_endereco}
+      #{rua_numero}
+      #{bairro_cep}
+      #{cidade_estado}
+      #{telefone}
+    }
+    expect(nome_endereco).not_to be_empty
+    expect(rua_numero).not_to be_empty
+    expect(bairro_cep).not_to be_empty
+    expect(cidade_estado).not_to be_empty
+    expect(telefone).not_to be_empty
+  end
 end

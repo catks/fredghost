@@ -39,3 +39,5 @@ build/
 
 #imagens
 *.png
+
+FredGhost-Android/features/step_definitions/Utils/conexao_webapi.rb

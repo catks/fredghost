@@ -1,37 +1,3 @@
-query("* id:'price'" , :text)[0]
-query("* id:'price'" , :text)[-1]
-query("* id:'price'" , :text)[0]
-exit
-query "Button"
-query "*"
-query "AppCompatButton"
-tap_mark "Entrar"
-tap_mark "Entrar"
-touch  "* marked:'Entrar'"
-exit
-query "*"
-check_element_exists("* id:'price'")
-check_element_exists("* id:'price'")
-check_element_exists("* id:'price'")
-check_element_exists("* id:'price'")
-check_element_exists("* id:'price'")
-query "* id:'sku'"
-check_element_exists("* id:'sku'")
-element_exists("* id:'sku'")
-expect(element_exists("* id:'sku'")).to be true
-require 'rspec'
-expect(element_exists("* id:'sku'")).to be true
-require 'calabash-android/calabash_steps'
-wxit
-exit
-query "*"
-start_test_server_in_background
-query("* marked:'Boleto'")
-query("* marked:'Boleto Bancário'")
-query("* marked:'Boleto Bancário'")
-query("* marked:'Boleto Bancário'")
-element_exists("* marked:'Boleto Bancário'")
-element_exists("* marked:'Boleto Bancário'")
 exit
 query "LinearLayout marked:'Boleto Bancário'"
 query "* marked:'Boleto Bancário'"
@@ -47,4 +13,38 @@ query "* id:'snackbar_text'" , :text
 query "* id:'snackbar_text'" 
 exit
 reinstall_apps
+exit
+query "*"
+start_test_server_in_background
+query "*"
+query "*"
+query "* id:'container'"
+query "* id:'container'"
+query "* id:'container'"
+query "LinearLayout"
+query "* id:'container'"
+(query "* id:'container'").size
+exit
+scroll_down
+start_test_server_in_background
+scroll_down
+query "*"
+query "*"|more
+query "LinearLayout"
+scroll_down "FrameLayout"
+scroll_down 
+scroll("*", :down)
+scroll("*", :down)
+scroll("*", :down)
+scroll("LinearLayout", :down)
+scroll("FrameLayout", :down)
+scroll("FrameLayout", :down)
+scroll("FrameLayout", :up)
+scroll("FrameLayout", :up)
+scroll("* id:'recycler_view'", :down)
+scroll("* id:'recycler_view'", :down)
+scroll("* id:'recycler_view'", :down)
+scroll("* id:'recycler_view'", :down)
+scroll("* id:'recycler_view'", :down)
+scroll("* id:'recycler_view'", :down)
 exit
