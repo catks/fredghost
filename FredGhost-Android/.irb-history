@@ -1,6 +1,3 @@
-exit
-scroll_down
-start_test_server_in_background
 scroll_down
 query "*"
 query "*"|more
@@ -47,4 +44,7 @@ num.slice! "Pedido N°: "
 puts num
 num.slice! "Pedido Nº: "
 puts num
+exit
+Timeout.timeout($timeout * 60)
+Timeout.timeout(10)
 exit

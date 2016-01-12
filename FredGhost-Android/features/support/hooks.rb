@@ -19,6 +19,17 @@ Before do |scenario|
    $tagerros.each &lambda_verifica_tags
 end
 
+Around do |scenario, block|
+  $timeout = 10 # timeout em minutos  por cenário (padrão é 10)
+  begin
+    Timeout.timeout($timeout * 60) do #transforma o timeout em segundos
+      block.call
+    end
+  rescue
+    raise "Timeout Atingido, o teste demorou mais de #{$timeout} minutos"
+  end
+end
+
 After do |scenario|
 
   #Tags Especiais
