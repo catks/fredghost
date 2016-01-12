@@ -1,0 +1,77 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    awesome_print (1.6.1)
+    builder (3.2.2)
+    calabash-android (0.6.0)
+      awesome_print (~> 1.2)
+      cucumber
+      escape (~> 0.0.4)
+      httpclient (>= 2.3.2, < 3.0)
+      json (~> 1.8)
+      retriable (>= 1.3.3.1, < 1.5)
+      rubyzip (~> 1.1)
+      slowhandcuke (~> 0.0.3)
+    cucumber (2.2.0)
+      builder (>= 2.1.2)
+      cucumber-core (~> 1.3.0)
+      cucumber-wire (~> 0.0.1)
+      diff-lcs (>= 1.1.3)
+      event-bus (~> 0.1.0)
+      gherkin3 (~> 3.1.0)
+      multi_json (>= 1.7.5, < 2.0)
+      multi_test (>= 0.1.2)
+    cucumber-core (1.3.1)
+      gherkin3 (~> 3.1.0)
+    cucumber-wire (0.0.1)
+    diff-lcs (1.2.5)
+    domain_name (0.5.25)
+      unf (>= 0.0.5, < 1.0.0)
+    escape (0.0.4)
+    event-bus (0.1.0)
+    gherkin3 (3.1.2)
+    http-cookie (1.0.2)
+      domain_name (~> 0.5)
+    httpclient (2.7.1)
+    json (1.8.3)
+    mime-types (2.99)
+    multi_json (1.11.2)
+    multi_test (0.1.2)
+    netrc (0.11.0)
+    rest-client (1.8.0)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 3.0)
+      netrc (~> 0.7)
+    retriable (1.4.1)
+    rspec (3.4.0)
+      rspec-core (~> 3.4.0)
+      rspec-expectations (~> 3.4.0)
+      rspec-mocks (~> 3.4.0)
+    rspec-core (3.4.1)
+      rspec-support (~> 3.4.0)
+    rspec-expectations (3.4.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.4.0)
+    rspec-mocks (3.4.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.4.0)
+    rspec-support (3.4.1)
+    rubyzip (1.1.7)
+    slowhandcuke (0.0.3)
+      cucumber
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  calabash-android
+  cucumber
+  json
+  rest-client
+  rspec
+
+BUNDLED WITH
+   1.11.2

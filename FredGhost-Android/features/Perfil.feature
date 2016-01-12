@@ -2,7 +2,7 @@
 @perfil @minha_conta
 Funcionalidade: Validar Perfil
 
-@entrar @reset @meus_dados @alterar @email @meus_enderecos @skip_feature_if_failed
+@entrar @reset @meus_dados @alterar @email @meus_enderecos @meus_pedidos @skip_feature_if_failed
 Cenário: Entrar
 
 Dado que estou na tela inicial
@@ -127,5 +127,10 @@ Então visualizo meus endereços
 
 
 
-#@pedidos
+@meus_pedidos
 #Então devo deslizar até a aba "Meus pedidos"
+Cenário: Verificar Meus Pedidos
+Dado que estou na tela inicial
+Quando clicar no menu lateral
+E clico em "Meus pedidos"
+Então visualizo meus pedidos

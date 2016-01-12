@@ -164,7 +164,7 @@ end
 Então(/^visualizo meus endereços$/) do
 
   enderecos = (query Elementos::MinhaConta::MeusEnderecos::Endereco_Container)
-  for i in (0...enderecos.size) # 0 < 
+  for i in (0...enderecos.size) # 0 <
     nome_endereco = (query Elementos::MinhaConta::MeusEnderecos::Nome_Endereco , :text)[i]
     rua_numero = (query Elementos::MinhaConta::MeusEnderecos::Rua_Numero , :text)[i]
     bairro_cep = (query Elementos::MinhaConta::MeusEnderecos::Bairro_Cep , :text)[i]
@@ -183,5 +183,30 @@ Então(/^visualizo meus endereços$/) do
     expect(bairro_cep).not_to be_empty
     expect(cidade_estado).not_to be_empty
     expect(telefone).not_to be_empty
+  end
+end
+
+Então(/^visualizo meus pedidos$/) do
+  wait_for_element_exists(Elementos::MinhaConta::MeusPedidos::Preco , :timeout => 10)
+  qtd_pedidos = (query Elementos::MinhaConta::MeusPedidos::Preco).size
+  @pedidos = []
+  for i in (0...qtd_pedidos)
+    num_pedido = (query Elementos::MinhaConta::MeusPedidos::Numero_Do_Pedido , :text)[i]
+    num_pedido.slice! "Pedido Nº: "
+    forma_pagamento = (query Elementos::MinhaConta::MeusPedidos::Metodo_De_Pagamento , :text)[i]
+    valor = (query Elementos::MinhaConta::MeusPedidos::Preco , :text)[i]
+    data = (query Elementos::MinhaConta::MeusPedidos::Data , :text)[i]
+    status = (query Elementos::MinhaConta::MeusPedidos::Status , :text)[i]
+
+    pedido = Modelos::Pedido.new(num_pedido,forma_pagamento,valor,data,status)
+    @pedidos << pedido
+  end
+  @pedidos.each do |pedido|
+    puts pedido.to_s #Exibe o valor do pedido
+    expect(pedido.id_pedido).not_to be_empty
+    expect(pedido.forma_pagamento).not_to be_empty
+    expect(pedido.valor_total).not_to be_empty
+    expect(pedido.data).not_to be_empty
+    expect(pedido.status).not_to be_empty
   end
 end

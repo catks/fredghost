@@ -1,30 +1,4 @@
 exit
-query "LinearLayout marked:'Boleto Bancário'"
-query "* marked:'Boleto Bancário'"
-touch "* id:'financing_title'"
-touch "* id:'financing_title'"
-touch "* id:'financing_title'"
-query "LinearLayout"
-exit
-query "* id:'snackbar_text'"
-query "* id:'snackbar_text'"
-start_test_server_in_background
-query "* id:'snackbar_text'" , :text
-query "* id:'snackbar_text'" 
-exit
-reinstall_apps
-exit
-query "*"
-start_test_server_in_background
-query "*"
-query "*"
-query "* id:'container'"
-query "* id:'container'"
-query "* id:'container'"
-query "LinearLayout"
-query "* id:'container'"
-(query "* id:'container'").size
-exit
 scroll_down
 start_test_server_in_background
 scroll_down
@@ -47,4 +21,30 @@ scroll("* id:'recycler_view'", :down)
 scroll("* id:'recycler_view'", :down)
 scroll("* id:'recycler_view'", :down)
 scroll("* id:'recycler_view'", :down)
+exit
+start_test_server_in_background
+reinstall_test_server
+start_test_server_in_background
+start_test_server_in_background
+query "*"
+exit
+query "*"
+query "* id:'order_number'"
+query "* id:'price'"
+exit
+query "*"
+query "* id:'order_number'"
+(query "* id:'order_number'")[0]
+(query "* id:'order_number'" , :text)[0]
+(query "* id:'order_number'")
+(query "* id:'order_number'").first
+(query "* id:'order_number'" , :text).first
+num = (query "* id:'order_number'" , :text).first
+puts num
+num.slice "Pedido N°: "
+puts num
+num.slice! "Pedido N°: "
+puts num
+num.slice! "Pedido Nº: "
+puts num
 exit

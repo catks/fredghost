@@ -99,7 +99,7 @@ module Elementos
       Endereco_Container = "* id:'container'"
     end
 
-    module Meus_Pedidos
+    module MeusPedidos
       Numero_Do_Pedido = "* id:'order_number'"
       Metodo_De_Pagamento = "* id:'payment'"
       Preco = "* id:'price'"
