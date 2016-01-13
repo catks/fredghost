@@ -14,13 +14,13 @@ module FredHelpers
 
   #Desliza até o elemento desejado
     #elemento -> Recebe a query para achar o elemento ex: "* id:'city'"
-    #direcao -> armazena um Symbol deve receber :down, :up,:left ou :right
+    #direcao -> armazena um Symbol deve receber :down ou :up
     #view -> view que o android deve dar o scroll, caso seja omitido ele usa a view "* id:'recycler_view'"
     #max_tentativas -> numero maximo de scrolls que serao dados para achar o elemento
   def deslizar_ate(elemento, direcao, view = "* id:'recycler_view'", max_tentativas = 30)
     scrolls = 0
       while (q.empty? && scrolls < max_tentativas)
-        scroll(view, direcao)
+        scroll(view, direcao.to_sym)
         q = query(elemento)
         scrolls = scrolls + 1
       end

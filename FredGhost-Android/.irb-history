@@ -1,37 +1,3 @@
-touch "* id:'text2'"
-touch "* id:'complement'"
-query "* id:'complement'" , :text
-query "* id:'complement'" , :text
-tap_mark "Cep"
-tap_mark "CEP"
-exit
-query "* id:'title'"
-query "* id:'title'"
-start_test_server_in_background
-query "* id:'title'"
-query "* id:'title'"
-query "* id:'title'"
-query "* id:'title'"
-query "* id:'title'" , : text
-query "* id:'title'" , :text
-(query "* id:'title'")[2]
-(query "* id:'title'")[1]
-exit
-query "*"
-exit
-query "*"
-start_test_server_in_background
-tap query "*"
-query "*"
-query "* marked:'Preenchimento obrigatório'"
-query "* marked:'Atualizar'"
-exit
-tap_mark "Telefone"
-start_test_server_in_background
-tap_mark "Telefone"
-tap_mark "Telefone"
-exit
-reinstall_apps
 exit
 reinstall_apps
 exit
@@ -47,4 +13,38 @@ require 'fred_helper.rb'
 require 'fred_helpers.rb'
 require '/features/support/fred_helpers.rb'
 cd
+exit
+ls
+query "*"
+query "TextView"
+(query "TextView").first
+(query "TextView" , :text).first
+(query "* id:'image')"
+(query "* id:'image'")
+query "* id:'image'"
+(query "TextView").first
+(query "TextView").first
+exit
+exit
+exit
+query "* id:'image'"
+scroll("* id:'image'", :left)
+teste = :hue
+puts teste
+teste.to_sym
+pan "* id:'image'" , :right
+pan "* id:'image'" , :right
+pan "* id:'image'" , :left
+query "* id:'content'"
+query "* id:'content'" , :text
+(query "* id:'content'" , :text).first
+touch "* id:'content'"
+touch "* id:'content'"
+(query "* id:'content'" , :text)
+(query "* id:'content'" , :text)
+(query "* id:'content'")
+(query "AppCompatTextView id:'content'")
+query "ImageView"
+query "*"
+query "AppCompatImageView"
 exit

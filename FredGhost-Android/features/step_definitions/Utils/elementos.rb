@@ -124,6 +124,31 @@ module Elementos
 
   end
 
+  module Pdp
+    Nome_Produto = "TextView"
+    Imagem = "* id:'image'"
+    Preco_De = "* id:'old_price'"
+    Preco_Por = "* id:'price'"
+    Tamanho = "* marked:'Tamanho'"
+    Aba_Descricao = "* marked:'Descrição'"
+    Descricao = "* description"
+    Aba_Avaliacoes = "* marked:'Avaliações'"
+    Avaliacoes_Ver_Todos = "* marked:'Ver todos'"
+    module VerMaisDescricao
+      Descricao_Completa = "* id:'content'"
+    end
+    module Tamanhos
+      Disponiveis = "AppCompatTextView id:'content'"
+    end
+    module VerTodasAvaliacoes
+      Autores = "* review_creator"
+      Titulos = "* rating_title"
+      Conteudo = "* rating_content"
+    end
+    #TODO: Cores (Ainda não havia id para elas)
+
+
+  end
   module Checkout
     Boleto = "* marked:'Boleto Bancário'"
     Cartao = "* marked:'Cartão de Crédito'"
