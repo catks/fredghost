@@ -97,6 +97,20 @@ module Elementos
       Cidade_Estado = "* id:'line3'"
       Telefone = "* id:'line4'"
       Endereco_Container = "* id:'container'"
+
+      module Alterar
+        Nome_Endereco = "* id:'address_id'"
+        Recebedor = "* id:'receiver'"
+        CEP = "* id:'postal_code''"
+        Rua = "* id:'street'"
+        Numero = "* id:'number'"
+        Complemento = "* id:'complement'"
+        Bairro = "* id:'district'"
+        Cidade = "* id:'city'"
+        Estado = "* id:'text2'"
+        Telefone = "* id:'main_phone'"
+        Celular = "* id:'secondary_phone'"
+      end
     end
 
     module MeusPedidos

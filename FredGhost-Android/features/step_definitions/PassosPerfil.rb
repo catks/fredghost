@@ -143,8 +143,8 @@ end
 
 Então(/^visualizo meus endereços$/) do
 
-  enderecos = (query Elementos::MinhaConta::MeusEnderecos::Endereco_Container)
-  for i in (0...enderecos.size) # 0 <
+  @qtd_enderecos = (query Elementos::MinhaConta::MeusEnderecos::Endereco_Container).size
+  for i in (0...@qtd_enderecos) # 0 <
     nome_endereco = (query Elementos::MinhaConta::MeusEnderecos::Nome_Endereco , :text)[i]
     rua_numero = (query Elementos::MinhaConta::MeusEnderecos::Rua_Numero , :text)[i]
     bairro_cep = (query Elementos::MinhaConta::MeusEnderecos::Bairro_Cep , :text)[i]
@@ -189,4 +189,85 @@ Então(/^visualizo meus pedidos$/) do
     expect(pedido.data).not_to be_empty
     expect(pedido.status).not_to be_empty
   end
+end
+
+Então(/^clico no endereço "([^"]*)"$/) do |num_endereco|
+  endereco = (query Elementos::MinhaConta::MeusEnderecos::Nome_Endereco)[num_endereco.to_i-1]
+  touch endereco
+end
+
+Então(/^visualizo os dados do meu endereço$/) do
+  nome_endereco = (query Elementos::MinhaConta::MeusEnderecos::Alterar::Nome_Endereco , :text).first
+  recebedor = (query Elementos::MinhaConta::MeusEnderecos::Alterar::Recebedor , :text).first
+  cep = (query Elementos::MinhaConta::MeusEnderecos::Alterar::CEP , :text).first
+  rua = (query Elementos::MinhaConta::MeusEnderecos::Alterar::Rua , :text).first
+  numero = (query Elementos::MinhaConta::MeusEnderecos::Alterar::Numero , :text).first
+  complemento = (query Elementos::MinhaConta::MeusEnderecos::Alterar::Complemento , :text).first
+  bairro = (query Elementos::MinhaConta::MeusEnderecos::Alterar::Bairro , :text).first
+  cidade = (query Elementos::MinhaConta::MeusEnderecos::Alterar::Cidade , :text).first
+  estado = (query Elementos::MinhaConta::MeusEnderecos::Alterar::Estado , :text).first
+  telefone = (query Elementos::MinhaConta::MeusEnderecos::Alterar::Telefone , :text).first
+  scroll_down
+  celular = (query Elementos::MinhaConta::MeusEnderecos::Alterar::Celular , :text).first
+  scroll_up
+
+  @endereco = Modelos::Endereco.new(nome_endereco,recebedor,cep,rua,numero,complemento,bairro,cidade,estado,telefone,celular)
+  puts @endereco.to_s # exibe os dados do endereco
+
+  #Vamos validar os dados (celular não e obrigatorio por isso não é validado)
+  expect(@endereco.nome_endereco).not_to be_empty
+  expect(@endereco.recebedor).not_to be_empty
+  expect(@endereco.cep).not_to be_empty
+  expect(@endereco.rua).not_to be_empty
+  expect(@endereco.numero).not_to be_empty
+  expect(@endereco.bairro).not_to be_empty
+  expect(@endereco.cidade).not_to be_empty
+  expect(@endereco.estado).not_to be_empty
+  expect(@endereco.telefone).not_to be_empty
+
+end
+
+Então(/^visualizo que meu endereço foi alterado$/) do
+  nome_endereco = query Elementos::MinhaConta::MeusEnderecos::Alterar::Nome_Endereco , :text
+  recebedor = query Elementos::MinhaConta::MeusEnderecos::Alterar::Recebedor , :text
+  cep = query Elementos::MinhaConta::MeusEnderecos::Alterar::CEP , :text
+  rua = query Elementos::MinhaConta::MeusEnderecos::Alterar::Rua , :text
+  numero = query Elementos::MinhaConta::MeusEnderecos::Alterar::Numero , :text
+  complemento = query Elementos::MinhaConta::MeusEnderecos::Alterar::Complemento , :text
+  bairro = query Elementos::MinhaConta::MeusEnderecos::Alterar::Bairro , :text
+  cidade = query Elementos::MinhaConta::MeusEnderecos::Alterar::Cidade , :text
+  estado = query Elementos::MinhaConta::MeusEnderecos::Alterar::Estado , :text
+  telefone = query Elementos::MinhaConta::MeusEnderecos::Alterar::Telefone , :text
+  scroll_down
+  celular = query Elementos::MinhaConta::MeusEnderecos::Alterar::Celular , :text
+  scroll_up
+
+  #Vamos verificar se os dados são diferentes
+  expect(cep).not_to eq @endereco.cep
+  expect(rua).not_to eq @endereco.rua
+  expect(numero).not_to eq @endereco.numero
+  expect(bairro).not_to eq @endereco.bairro
+
+end
+
+Então(/^altero para os dados antigos$/) do
+  puts @endereco.cep
+  steps %{
+    Então edito o campo "CEP" com "#{@endereco.cep}"
+    E espero carregar
+    E clico em "Atualizar"
+  }
+  #esperamos ter saído da tela de edição
+  expect((query "* marked:'Atualizar'")).to be_empty
+end
+
+Então(/^preencho o campo Nome do Endereço com um numero aleatorio$/) do
+  @novo_endereco_nome = "Teste #{rand(1000)}"
+  steps %{
+    Então preencho o campo "Nome do Endereço" com "#{@novo_endereco_nome}"
+  }
+end
+
+Então(/^vejo que o novo endereço foi adicionado$/) do
+  deslizar_ate("* marked:#{novo_endereco_nome}", :down)
 end

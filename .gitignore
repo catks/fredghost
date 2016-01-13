@@ -40,4 +40,6 @@ build/
 #imagens
 *.png
 
+#Arquivos ignorados
 FredGhost-Android/features/step_definitions/Utils/conexao_webapi.rb
+FredGhost-Android/.irb-history

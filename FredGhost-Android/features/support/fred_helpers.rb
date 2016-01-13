@@ -12,6 +12,24 @@ module FredHelpers
     }
   end
 
+  #Desliza até o elemento desejado
+    #elemento -> Recebe a query para achar o elemento ex: "* id:'city'"
+    #direcao -> armazena um Symbol deve receber :down, :up,:left ou :right
+    #view -> view que o android deve dar o scroll, caso seja omitido ele usa a view "* id:'recycler_view'"
+    #max_tentativas -> numero maximo de scrolls que serao dados para achar o elemento
+  def deslizar_ate(elemento, direcao, view = "* id:'recycler_view'", max_tentativas = 30)
+    scrolls = 0
+      while (q.empty? && scrolls < max_tentativas)
+        scroll(view, direcao)
+        q = query(elemento)
+        scrolls = scrolls + 1
+      end
+
+      if scrolls >= max_tentativas
+        raise "Não foi possível deslizar até o Elemento, o elemento '#{elemento}' não foi encontrado (Número máximo de scrolls atingido)"
+      end
+  end
+
   def esperar(segundos)
     sleep(segundos.to_i)
   end

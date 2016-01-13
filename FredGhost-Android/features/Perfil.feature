@@ -2,7 +2,7 @@
 @perfil @minha_conta
 Funcionalidade: Validar Perfil
 
-@entrar @reset @meus_dados @alterar @email @meus_enderecos @meus_pedidos @skip_feature_if_failed
+@entrar @reset @meus_dados @alterar @email @meus_enderecos @meus_pedidos @exibir @cadastrar @alterar @skip_feature_if_failed
 Cenário: Entrar
 
 Dado que estou na tela inicial
@@ -116,7 +116,7 @@ Então devo ver que estou logado
 Então mudo a minha senha para "123" novamente
 
 
-@meus_enderecos
+@meus_enderecos @exibir
 Cenário: Verificar Meus Endereços
 
 Dado que estou na tela inicial
@@ -125,9 +125,41 @@ E clico em "Meus endereços"
 E espero carregar
 Então visualizo meus endereços
 
+@meus_enderecos @cadastrar
+Cenário: Cadastrar Meus Endereços
 
+Dado que estou na tela inicial
+Quando clicar no menu lateral
+E clico em "Meus endereços"
+E espero carregar
+Então visualizo meus endereços
+E clico no botão circular para adicionar um endereço
+E preencho o campo Nome do Endereço com um numero aleatorio
+E preencho o campo "Quem vai receber?" com "Testador Jr"
+E preencho o campo "CEP" com "04795-000"
+E preencho o campo "Número" com "190"
+E preencho o campo "Telefone" com "5555-5551"
+E clico em "Adicionar"
+Então vejo que o novo endereço foi adicionado
 
-@meus_pedidos
+@meus_enderecos @alterar
+Cenário: Alterar Meus Endereços
+
+Dado que estou na tela inicial
+Quando clicar no menu lateral
+E clico em "Meus endereços"
+E espero carregar
+Então visualizo meus endereços
+E clico no endereço "2"
+E visualizo os dados do meu endereço
+E edito o campo "CEP" com "04795-000"
+E espero carregar
+E clico em "Atualizar"
+Então clico no endereço "2"
+E visualizo que meu endereço foi alterado
+Então altero para os dados antigos
+
+@meus_pedidos @exibir
 #Então devo deslizar até a aba "Meus pedidos"
 Cenário: Verificar Meus Pedidos
 Dado que estou na tela inicial
