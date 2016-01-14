@@ -131,7 +131,7 @@ module Elementos
     Preco_Por = "* id:'price'"
     Tamanho = "* marked:'Tamanho'"
     Aba_Descricao = "* marked:'Descrição'"
-    Descricao = "* description"
+    Descricao = "* id:'description'"
     Aba_Avaliacoes = "* marked:'Avaliações'"
     Avaliacoes_Ver_Todos = "* marked:'Ver todos'"
     module VerMaisDescricao
@@ -145,7 +145,7 @@ module Elementos
       Titulos = "* rating_title"
       Conteudo = "* rating_content"
     end
-    #TODO: Cores (Ainda não havia id para elas)
+    #TODO: Cores (Ainda não há id para elas)
 
 
   end
