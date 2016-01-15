@@ -141,19 +141,31 @@ module Elementos
       Disponiveis = "AppCompatTextView id:'content'"
     end
     module VerTodasAvaliacoes
-      Autores = "* review_creator"
-      Titulos = "* rating_title"
-      Conteudo = "* rating_content"
+      Autores = "* id:'review_creator'"
+      Titulos = "* id:'rating_title'"
+      Conteudo = "* id:'rating_content'"
     end
     #TODO: Cores (Ainda não há id para elas)
-
+    module Compra
+      Rapida = "* id:'quick_buy'"
+      Checkout = "* id:'checkout'"
+    end
 
   end
+
+
   module Checkout
     Boleto = "* marked:'Boleto Bancário'"
     Cartao = "* marked:'Cartão de Crédito'"
+    Endereco_Alterar = "* id:'message'"
+
+    module Endereco
+      Nome_Endereco = "* id:'title'"
+      Rua_Numero = "* id:'line1'"
+      Bairro_Cep = "* id:'line2'"
+      Cidade_Estado = "* id:'line3'"
+      Telefone = "* id:'line4'"
+    end
   end
-
-
 
 end

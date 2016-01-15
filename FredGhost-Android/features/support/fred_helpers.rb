@@ -49,6 +49,11 @@ module FredHelpers
     esperar_teclado_sumir
   end
 
+  def aguardar_carregar(timeout=10)
+    wait_for_element_does_not_exist("ProgressBar", :timeout => timeout)
+  end
+
+
 end
 
 World(FredHelpers) #Inclui os metodos desso modulo para rodar nos testes do cucumber

@@ -1,50 +1,50 @@
-ls
+hash.map
+hash.map['description']
+hash
+hash.map
+hash.first
+hash = hash.first
+hash
+hash["x"]
+hash["id"]
+hash["description"]
+"A".chunck
+"A".chunk
+["A"].chunk
+["A"].chunk
+exit
 query "*"
-query "TextView"
-(query "TextView").first
-(query "TextView" , :text).first
-(query "* id:'image')"
-(query "* id:'image'")
-query "* id:'image'"
-(query "TextView").first
-(query "TextView").first
-exit
-exit
-exit
-query "* id:'image'"
-scroll("* id:'image'", :left)
-teste = :hue
-puts teste
-teste.to_sym
-pan "* id:'image'" , :right
-pan "* id:'image'" , :right
-pan "* id:'image'" , :left
 query "* id:'content'"
-query "* id:'content'" , :text
-(query "* id:'content'" , :text).first
 touch "* id:'content'"
 touch "* id:'content'"
-(query "* id:'content'" , :text)
-(query "* id:'content'" , :text)
-(query "* id:'content'")
-(query "AppCompatTextView id:'content'")
-query "ImageView"
-query "*"
-query "AppCompatImageView"
+touch "* id:'message'"
 exit
-query "TextView"
+query ""D*
+query "**
+query "*"
+query "*"
+query "*"
+start_test_server_in_background
+exit
 start_test_server_in_background
 query "*"
-query "TextView"
-query "TextView" , :text
+query "* id:'title'"
+(query "* id:'title'")[1]
+(query "* id:'title'")21]
+(query "* id:'title'")[2]
+(query "* id:'title'")[2]
+touch (query "* id:'title'")[2]
 exit
-query "* id:'content'"
-start_test_server_in_background
-query "* id:'content'"
 query "*"
-query "* id:'contentScrollView'"
-query "* id:'contentScrollView'" , :text
-query "* id:'description'" , :text
-query "TextView"
-query "TextView"
+start_
+start_test_server_in_background
+query "*"
+query "* id:'discount'"
+(query "* id:'discount'")[0]
+temp = (query "* id:'discount'")[0]
+temp
+temp['id']
+temp['text']
+exit
+exit
 exit

@@ -29,11 +29,11 @@ end
 end
 
 RSpec::Matchers.define :have_words do |expected = 10|
-  match do |element|
+  match do |actual|
     #default
     #expected ||= 10 # no minimo 10 palavras
     #
-    content = query element , :text #pega o texto do elemento
+    content = (query actual , :text).first #pega o texto do elemento
     words = content.split.size
     words >= expected
   end

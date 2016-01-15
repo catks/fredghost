@@ -42,11 +42,23 @@ Então(/^posso visualizar os tamanhos disponíveis$/) do
   touch Elementos::Pdp::Tamanho
   sleep 2
   expect(Elementos::Pdp::Tamanhos::Disponiveis).to exist_in_page
+  puts "Tamanhos Disponiveis"
+  (query Elementos::Pdp::Tamanhos::Disponiveis , :text).each do |tamanho|
+    puts tamanho
+  end
+end
+
+Então(/^escolho o tamanho "([^"]*)"$/) do |tamanho|
+  tap_mark 'Tamanho'
+  sleep 2
+  tap_mark tamanho
 end
 
 Então(/^posso visualizar a descrição$/) do
+  scroll_down
   touch Elementos::Pdp::Aba_Descricao
-  touch Elementos::Pdp::Descricao
+  #touch Elementos::Pdp::Descricao
+  #TODO: Melhorar para visualizar o ver mais
   expect(Elementos::Pdp::Descricao).to have_words
 end
 
@@ -58,4 +70,25 @@ Então(/^posso visualizar as avaliações$/) do
   expect(Elementos::Pdp::VerTodasAvaliacoes::Autores).to exist_in_page
   expect(Elementos::Pdp::VerTodasAvaliacoes::Titulos).to exist_in_page
   expect(Elementos::Pdp::VerTodasAvaliacoes::Conteudo).to exist_in_page
+end
+
+Então(/^escolho um tamanho qualquer$/) do
+  touch Elementos::Pdp::Tamanho
+  sleep 2
+  touch Elementos::Pdp::Tamanhos::Disponiveis
+end
+
+Então(/^visualizo o botão de compra rápida e de checkout$/) do
+  wait_for_element_exists(Elementos::Pdp::Compra::Rapida, :timeout => 5)
+  wait_for_element_exists(Elementos::Pdp::Compra::Checkout, :timeout => 5)
+end
+
+Então(/^clico no botão de compra rápida$/) do
+  sleep 1
+  touch Elementos::Pdp::Compra::Rapida
+end
+
+Então(/^clico no botão continuar para o checkout$/) do
+  sleep 1
+  touch Elementos::Pdp::Compra::Checkout
 end

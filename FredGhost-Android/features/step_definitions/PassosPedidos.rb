@@ -1,18 +1,12 @@
 # encoding: utf-8
 require 'calabash-android/calabash_steps'
 
-Então(/^escolho o tamanho "([^"]*)"$/) do |tamanho|
-  tap_mark 'Tamanho'
-  sleep 2
-  tap_mark tamanho
-end
-
 Então(/^posso visualizar o item "([^"]*)" no carrinho$/) do |nomeProduto|
   sleep(5) # espera 5 segundos para a página carregar
   assert_text nomeProduto
 end
 
-Então(/^selecionar a opção de entrega "(Entrega Convencional|Entrega Agendada)"$/) do |tipoEntrega|
+Então(/^seleciono a opção de entrega "(Entrega Convencional|Entrega Agendada)"$/) do |tipoEntrega|
 #Então(/^selecionar a opção de entrega "([^"]*)"$/) do |tipoEntrega|
   wait_for(timeout: 10) { element_exists "* id:'radio'" }
   if tipoEntrega.downcase  == "entrega convencional"
@@ -23,7 +17,7 @@ Então(/^selecionar a opção de entrega "(Entrega Convencional|Entrega Agendada
 
 end
 
-Então(/^selecionar a forma de pagamento como "([^"]*)"$/) do |tipoPagamento|
+Então(/^seleciono a forma de pagamento como "([^"]*)"$/) do |tipoPagamento|
 
   # TODO: Melhorar o jeito de achar a radio certa
   sleep(3)
@@ -84,6 +78,17 @@ Então(/^preencho o dados do cartão com Titular: "([^"]*)", N° do cartão: "([
   keyboard_enter_text(cvc)
 
 end
+
+#Para a tela de Compra rápida Tela Conclua seu Pedido
+Então(/^seleciono a data para o mês "([^"]*)" e ano "([^"]*)"$/) do |mes, ano|
+  touch "* id:'card_month'"
+  deslizar_para_baixo_ate(mes)
+  tap_mark mes
+  touch "* id:'card_year'"
+  deslizar_para_baixo_ate(ano)
+  tap_mark ano
+end
+
 
 Então(/^vejo a tela de resumo de compra$/) do
   wait_for_element_does_not_exist("ProgressBar", :timeout => 60)

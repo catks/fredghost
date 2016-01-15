@@ -15,8 +15,8 @@ Esquema do Cenário: Posso Finalizar Pedidos com Visa
   E clico no botão circular para adicionar ao Carrinho
   Então posso visualizar o item "Tênis" no carrinho
   E clico no botão circular de pagamento
-  E selecionar a opção de entrega "Entrega Convencional"
-  E selecionar a forma de pagamento como "Cartão de Crédito"
+  E seleciono a opção de entrega "Entrega Convencional"
+  E seleciono a forma de pagamento como "Cartão de Crédito"
   Então deslizo para baixo até que eu veja o "Adicionar Cartão"
   Então clico em "Adicionar Cartão"
   E preencho o dados do cartão com Titular: "Fred Automation", N° do cartão: "<n_cartao>", Mês: "<Mes>", Ano: "<Ano>", CVC:"<CVC>"
@@ -52,8 +52,8 @@ E escolho o tamanho "39"
 E clico no botão circular para adicionar ao Carrinho
 Então posso visualizar o item "Tênis" no carrinho
 E clico no botão circular de pagamento
-E selecionar a opção de entrega "Entrega Convencional"
-E selecionar a forma de pagamento como "Cartão de Crédito"
+E seleciono a opção de entrega "Entrega Convencional"
+E seleciono a forma de pagamento como "Cartão de Crédito"
 Então deslizo para baixo até que eu veja o "Adicionar Cartão"
 Então clico em "Adicionar Cartão"
 E preencho o dados do cartão com Titular: "Fred Automation", N° do cartão: "4001783473486878", Mês: "12", Ano: "2025", CVC:"123"
@@ -86,8 +86,8 @@ E clico no botão circular para adicionar ao Carrinho
 
 Então posso visualizar o item "Chinelo" no carrinho
 E clico no botão circular de pagamento
-E selecionar a opção de entrega "Entrega Convencional"
-E selecionar a forma de pagamento como "Cartão de Crédito"
+E seleciono a opção de entrega "Entrega Convencional"
+E seleciono a forma de pagamento como "Cartão de Crédito"
 Então deslizo para baixo até que eu veja o "Adicionar Cartão"
 Então clico em "Adicionar Cartão"
 E preencho o dados do cartão com Titular: "Fred Automation", N° do cartão: "4001783473486878", Mês: "12", Ano: "2025", CVC:"123"
@@ -110,8 +110,8 @@ E escolho o tamanho "39"
 E clico no botão circular para adicionar ao Carrinho
 Então posso visualizar o item "Tênis" no carrinho
 E clico no botão circular de pagamento
-E selecionar a opção de entrega "Entrega Convencional"
-E selecionar a forma de pagamento como "Cartão de Crédito"
+E seleciono a opção de entrega "Entrega Convencional"
+E seleciono a forma de pagamento como "Cartão de Crédito"
 Então deslizo para baixo até que eu veja o "Adicionar Cartão"
 Então clico em "Adicionar Cartão"
 E preencho o dados do cartão com Titular: "Fred Automation", N° do cartão: "5453010000066167", Mês: "12", Ano: "2024", CVC:"123"
@@ -132,8 +132,8 @@ E escolho o tamanho "39"
 E clico no botão circular para adicionar ao Carrinho
 Então posso visualizar o item "Tênis" no carrinho
 E clico no botão circular de pagamento
-E selecionar a opção de entrega "Entrega Convencional"
-E selecionar a forma de pagamento como "Cartão de Crédito"
+E seleciono a opção de entrega "Entrega Convencional"
+E seleciono a forma de pagamento como "Cartão de Crédito"
 Então deslizo para baixo até que eu veja o "Adicionar Cartão"
 Então clico em "Adicionar Cartão"
 E preencho o dados do cartão com Titular: "Fred Automation", N° do cartão: "36490102462661", Mês: "05", Ano: "2018", CVC:"123"

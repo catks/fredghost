@@ -95,3 +95,13 @@ end
 Então(/^espero carregar$/) do
   wait_for_element_does_not_exist("ProgressBar", :timeout => 5)
 end
+
+Então(/^visualizo o botão de "([^"]*)"$/) do |botao|
+  wait_for_element_exists("* marked:'#{botao}'", :timeout => 5)
+end
+
+Então(/^vejo que estou na tela "([^"]*)"$/) do |titulo_esperado|
+  sleep 3
+  titulo_obtido = (query "TextView" , :text).first
+  expect(titulo_obtido).to eq(titulo_esperado)
+end

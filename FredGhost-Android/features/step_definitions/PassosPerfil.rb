@@ -191,11 +191,6 @@ Então(/^visualizo meus pedidos$/) do
   end
 end
 
-Então(/^clico no endereço "([^"]*)"$/) do |num_endereco|
-  endereco = (query Elementos::MinhaConta::MeusEnderecos::Nome_Endereco)[num_endereco.to_i-1]
-  touch endereco
-end
-
 Então(/^visualizo os dados do meu endereço$/) do
   nome_endereco = (query Elementos::MinhaConta::MeusEnderecos::Alterar::Nome_Endereco , :text).first
   recebedor = (query Elementos::MinhaConta::MeusEnderecos::Alterar::Recebedor , :text).first
