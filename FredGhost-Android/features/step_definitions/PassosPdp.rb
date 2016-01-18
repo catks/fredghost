@@ -35,7 +35,12 @@ Então(/^posso visualizar o preço$/) do
 end
 
 Então(/^posso visualizar as cores disponíveis$/) do
-  pending # Ainda não é possível voisualizar as cores pois o elemento não possui id
+  cores = query("AppCompatImageView" , :tag).compact
+  puts "Cores Disponivéis"
+  cores.each do |cor|
+    puts cor
+  end
+  expect(cores).not_to be_empty
 end
 
 Então(/^posso visualizar os tamanhos disponíveis$/) do
@@ -49,6 +54,7 @@ Então(/^posso visualizar os tamanhos disponíveis$/) do
 end
 
 Então(/^escolho o tamanho "([^"]*)"$/) do |tamanho|
+  sleep 2
   tap_mark 'Tamanho'
   sleep 2
   tap_mark tamanho

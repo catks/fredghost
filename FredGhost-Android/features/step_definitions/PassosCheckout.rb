@@ -19,3 +19,9 @@ Então(/^vejo que o endereço mudou para meu endereço selecionado$/) do
   nome_endereco =(query Elementos::Checkout::Endereco::Nome_Endereco , :text).first
   expect(nome_endereco).to eq @nome_endereco_selecionado
 end
+
+Então(/^vejo que o endereço foi adicionado$/) do
+  aguardar_carregar
+  endereco = (query "* id:'title'" , :text).first
+  expect(endereco).to eq @novo_endereco_nome
+end

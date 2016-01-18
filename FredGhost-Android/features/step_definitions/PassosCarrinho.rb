@@ -52,6 +52,10 @@ Então(/^posso visualizar os itens no carrinho$/) do
   end
 end
 
+Então(/^posso visualizar o item "([^"]*)" no carrinho$/) do |nomeProduto|
+  sleep(5) # espera 5 segundos para a página carregar
+  assert_text nomeProduto
+end
 Quando(/^clico na quantidade do item "([^"]*)"$/) do |num_item|
   indice = num_item.to_i - 1
   touch (query Elementos::Carrinho::Array_Quantidades)[indice]

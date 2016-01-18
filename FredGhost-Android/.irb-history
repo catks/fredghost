@@ -1,50 +1,50 @@
-hash.map
-hash.map['description']
-hash
-hash.map
-hash.first
-hash = hash.first
-hash
-hash["x"]
-hash["id"]
-hash["description"]
-"A".chunck
-"A".chunk
-["A"].chunk
-["A"].chunk
+query "*"
+query "*"
 exit
+query *
 query "*"
-query "* id:'content'"
-touch "* id:'content'"
-touch "* id:'content'"
-touch "* id:'message'"
-exit
-query ""D*
-query "**
-query "*"
-query "*"
-query "*"
-start_test_server_in_background
-exit
 start_test_server_in_background
 query "*"
 query "* id:'title'"
-(query "* id:'title'")[1]
-(query "* id:'title'")21]
-(query "* id:'title'")[2]
-(query "* id:'title'")[2]
-touch (query "* id:'title'")[2]
+query "* id:'title'" , :title
+query "* id:'title'" , :text
+(query "* id:'title'" , :text)[0]
 exit
-query "*"
-start_
 start_test_server_in_background
+qury "*"
 query "*"
-query "* id:'discount'"
-(query "* id:'discount'")[0]
-temp = (query "* id:'discount'")[0]
-temp
-temp['id']
-temp['text']
+exit_
 exit
+query "*"
+query "* id:'image'"
+touch(query "* id:'image'")
+tap_mark "Minha conta"
+tap_mark "Minha conta"
+pan [B:left
 exit
+reinstall_apps
+query "ImageView"
+start_test_server_in_background
+query "ImageView"
+query "*"
+query "AppCompatImageView"
+query "AppCompatImageView" , :tag
+query("AppCompatImageView" , :tag)
+touch query("AppCompatImageView" , :tag)[3]
+touch query("AppCompatImageView")[3]
+touch query("AppCompatImageView")[4]
+exit
+reinstall_apps
+start_test_server_in_background
+start_test_server_in_background
+touch query("AppCompatImageView" , :tag)[3]
+query("AppCompatImageView" , :tag)[3]
+query("AppCompatImageView" , :tag)
+query("AppCompatImageView")
+query("AppCompatImageView")
+touch query("AppCompatImageView")[3]
+touch query("AppCompatImageView")[3]
+query("AppCompatImageView" , :tag)[3]
+query("AppCompatImageView" , :tag)
+query("AppCompatImageView" , :tag).compact
 exit

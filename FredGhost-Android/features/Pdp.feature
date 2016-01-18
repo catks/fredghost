@@ -12,14 +12,14 @@ Esquema do Cenário: Validar itens na PDP
   E posso visualizar o nome do produto "<nome_produto>" no topo
   E posso visualizar as imagens
   E posso visualizar o preço
-  #E posso visualizar as cores disponíveis
+  E posso visualizar as cores disponíveis
   E posso visualizar os tamanhos disponíveis
   E posso visualizar a descrição
   E posso visualizar as avaliações
   @tenis
   Exemplos:
-    |pesquisa        |nome_produto |
-    |Tênis Bout Sense|Tênis Bouts|
+    |pesquisa              |nome_produto |
+    |Tênis Bout Sense 6516C|Tênis Bouts|
 
 @tenis
 Cenário: Validar itens na PDP
@@ -31,7 +31,7 @@ Cenário: Validar itens na PDP
   E posso visualizar o nome do produto "Tênis Bouts" no topo
   E posso visualizar as imagens
   E posso visualizar o preço
-  #E posso visualizar as cores disponíveis
+  E posso visualizar as cores disponíveis
   E posso visualizar os tamanhos disponíveis
   E posso visualizar a descrição
   E posso visualizar as avaliações

@@ -1,11 +1,6 @@
 # encoding: utf-8
 require 'calabash-android/calabash_steps'
 
-Então(/^posso visualizar o item "([^"]*)" no carrinho$/) do |nomeProduto|
-  sleep(5) # espera 5 segundos para a página carregar
-  assert_text nomeProduto
-end
-
 Então(/^seleciono a opção de entrega "(Entrega Convencional|Entrega Agendada)"$/) do |tipoEntrega|
 #Então(/^selecionar a opção de entrega "([^"]*)"$/) do |tipoEntrega|
   wait_for(timeout: 10) { element_exists "* id:'radio'" }

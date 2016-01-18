@@ -18,6 +18,7 @@ Então(/^devo me logar(?: com email "([^"]*)" e com senha "([^"]*)")?$/) do |ema
   tap_mark 'Senha'
   keyboard_enter_text(senha)
   tap_mark 'Entrar'
+  aguardar_carregar
 end
 
 Então(/^devo ver uma mensagem de erro$/) do
