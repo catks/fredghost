@@ -1,50 +1,50 @@
 query "*"
-query "*"
-exit
-query *
+query "* id:'text2'"
+(query "* id:'text2'")[1]
+touch (query "* id:'text2'")[1]
+touch (query "* id:'text2'")[1]
+(query "* id:'text2'")[1]
+touch (query "* id:'text2'")
+(query "* id:'text2'")
 query "*"
 start_test_server_in_background
+query "* id:'text2'"
+query "* id:'text2'" , :text
+query "* id:'price'" , :text
+tap_mark "Manhã"
+query "TextView"
+query "TextView"
 query "*"
-query "* id:'title'"
-query "* id:'title'" , :title
-query "* id:'title'" , :text
-(query "* id:'title'" , :text)[0]
-exit
-start_test_server_in_background
-qury "*"
 query "*"
-exit_
-exit
-query "*"
-query "* id:'image'"
-touch(query "* id:'image'")
-tap_mark "Minha conta"
-tap_mark "Minha conta"
-pan [B:left
-exit
 reinstall_apps
-query "ImageView"
+start_TE
 start_test_server_in_background
-query "ImageView"
+query "*"
+query "*"
+query "* marked:'Bolteo Bancario'"
+query "* marked:'Bolteo Bancário'"
+query "* marked:'Boleto Bancário'"
+query "* marked:'Boleto Bancário'"
+start_test_server_in_background
+query "* marked:'Boleto Bancário'"
+reinstall_apps
+query "*"
+start_test_server_in_background
+start_test_server_in_background
+exit
+start_test_server_in_background
 query "*"
 query "AppCompatImageView"
-query "AppCompatImageView" , :tag
-query("AppCompatImageView" , :tag)
-touch query("AppCompatImageView" , :tag)[3]
-touch query("AppCompatImageView")[3]
-touch query("AppCompatImageView")[4]
-exit
-reinstall_apps
+query "AppCompatImageView" , :id
+query "AppCompatImageView" , :id
 start_test_server_in_background
+query "AppCompatImageView" , :id
 start_test_server_in_background
-touch query("AppCompatImageView" , :tag)[3]
-query("AppCompatImageView" , :tag)[3]
-query("AppCompatImageView" , :tag)
-query("AppCompatImageView")
-query("AppCompatImageView")
-touch query("AppCompatImageView")[3]
-touch query("AppCompatImageView")[3]
-query("AppCompatImageView" , :tag)[3]
-query("AppCompatImageView" , :tag)
-query("AppCompatImageView" , :tag).compact
+require File.expand_path("support/fred_seletor.rb")
+require File.expand_path("features/support/fred_seletor.rb")
+require File.expand_path("features/support/fred_seletor.rb")
+seletor
+include FredSeletor
+seletor
+seletor("*").id
 exit

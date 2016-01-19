@@ -166,6 +166,20 @@ module Elementos
       Cidade_Estado = "* id:'line3'"
       Telefone = "* id:'line4'"
     end
+
+    module Frete
+      Prazos_Entrega = "* id:'text2'"
+      Valor_Entrega = "* id:'price'"
+    end
+
+    module NovoCartao
+      Bandeiras = "AppCompatImageView"
+      Titular = "* id:'card_owner'"
+      Numero = "* id:'card_number'"
+      Mes = "* id:'card_month'"
+      Ano = "* id:'card_year'"
+      CVC = "* id:'card_verification'"
+    end
   end
 
 end

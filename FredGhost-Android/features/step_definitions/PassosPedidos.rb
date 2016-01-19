@@ -1,45 +1,15 @@
 # encoding: utf-8
 require 'calabash-android/calabash_steps'
 
-Então(/^seleciono a opção de entrega "(Entrega Convencional|Entrega Agendada)"$/) do |tipoEntrega|
-#Então(/^selecionar a opção de entrega "([^"]*)"$/) do |tipoEntrega|
-  wait_for(timeout: 10) { element_exists "* id:'radio'" }
-  if tipoEntrega.downcase  == "entrega convencional"
-    touch(query("* id:'radio'")[0])
-  elsif tipoEntrega.downcase  == "entrega agendada"
-    touch(query("* id:'radio'")[1])
-  end
-
-end
-
-Então(/^seleciono a forma de pagamento como "([^"]*)"$/) do |tipoPagamento|
-
-  # TODO: Melhorar o jeito de achar a radio certa
-  sleep(3)
-  wait_for(timeout: 15) { element_exists "* id:'radio'" }
-  if tipoPagamento.downcase.include? "boleto"
-    check_element_exists("* marked:'Boleto Bancário'")
-    touch(query("* id:'radio'")[2])
-
-  elsif tipoPagamento.downcase.include? "cartão"
-    if (element_does_not_exist("* marked:'Boleto Bancário'")) # Se não tiver a opção de boleto
-      touch(query("* id:'radio'")[2])
-    else
-      touch(query("* id:'radio'")[3])
-    end
-
-  end
-end
-
-
-
 Então(/^preencho o dados do cartão com Titular: "([^"]*)", N° do cartão: "([^"]*)", Mês: "([^"]*)", Ano: "([^"]*)", CVC:"([^"]*)"$/) do |titular, numCartao, mes, ano, cvc|
   #titular
   tap_mark 'Titular do Cartão'
+  clear_text
   keyboard_enter_text(titular)
 
   #Numero do Cartão
   tap_mark 'Número do Cartão'
+  clear_text
   keyboard_enter_text(numCartao)
 
   #MES
