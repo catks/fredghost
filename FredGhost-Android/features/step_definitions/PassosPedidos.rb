@@ -57,6 +57,7 @@ end
 
 Então(/^vejo a tela de resumo de compra$/) do
   wait_for_element_does_not_exist("ProgressBar", :timeout => 60)
+  sleep 2
   #check_element_does_not_exist("* id:'snackbar_text'")
   #wait_for(timeout: 60) { element_exists "* marked:'Resumo de Compra'" }
   assert_text('Resumo de Compra')

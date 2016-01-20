@@ -1,6 +1,7 @@
 # encoding: utf-8
 module Elementos
 
+  Nome_Tela = "TextView"
   module CadastroPF
     Cpf = "* id:'document'"
     Nome = "* id:'name'"
@@ -158,6 +159,8 @@ module Elementos
     Boleto = "* marked:'Boleto Bancário'"
     Cartao = "* marked:'Cartão de Crédito'"
     Endereco_Alterar = "* id:'message'"
+    Alterar_Opcoes_De_Parcelamento = "* id:'financing'"
+    Opcoes_De_Parcelamento="DropDownListView AppCompatTextView"
 
     module Endereco
       Nome_Endereco = "* id:'title'"
@@ -179,6 +182,34 @@ module Elementos
       Mes = "* id:'card_month'"
       Ano = "* id:'card_year'"
       CVC = "* id:'card_verification'"
+    end
+  end
+
+  module ResumoDeCompra
+    Numero_Do_Pedido = "* id:'order_number'"
+
+    module Produtos
+      Nomes = "* id:'name'"
+      Tamanhos = "* id:'product_size'"
+      Quantidades = "* id:'quantity'"
+      Precos = "* id:'price'"
+      Prazos = "* id:'shipping'"
+    end
+
+    Forma_De_Pagamento = "* id:'payment_option'"
+
+    module Endereco
+      Rua_Numero = "* id:'address_line_1'"
+      Bairro_Cep = "* id:'address_line_2'"
+      Cidade_Estado = "* id:'address_line_3'"
+      Telefone = "* id:'address_line_4'"
+    end
+
+    module  Valor
+      Frete = "* id:shipping_cost"
+      Desconto = "* id:'discount'"
+      Vale = "* id:'credit_ticket'"
+      Total = "* id:'total'"
     end
   end
 

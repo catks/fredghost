@@ -53,7 +53,8 @@ Então(/^posso visualizar os itens no carrinho$/) do
 end
 
 Então(/^posso visualizar o item "([^"]*)" no carrinho$/) do |nomeProduto|
-  sleep(5) # espera 5 segundos para a página carregar
+  aguardar_carregar
+  sleep 5 # espera 5 segundos para os itens aoarecerem
   assert_text nomeProduto
 end
 Quando(/^clico na quantidade do item "([^"]*)"$/) do |num_item|

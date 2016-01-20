@@ -46,3 +46,32 @@ RSpec::Matchers.define :have_words do |expected = 10|
       "O elemento #{actual} não deveria ser  encontrado na página"
   end
 end
+
+RSpec::Matchers.define :has_the_text do |expected|
+  match do |actual|
+    #default
+    #expected ||= 10 # no minimo 10 palavras
+    #
+    content = (query actual , :text).first #pega o texto do elemento
+    content == expected
+  end
+
+  failure_message do |actual|
+      "O elemento #{actual} não contém o texto ''#{expected}''"
+  end
+
+  failure_message_when_negated do |actual|
+      "O elemento #{actual} não deveria conter o texto ''#{expected}''"
+  end
+end
+
+RSpec::Matchers.define :be_an_order_number do
+  match do |actual|
+    expect(actual).to match_regex(/^N[º|°] [0-9]*$/)
+  end
+
+  failure_message do |actual|
+      "O elemento #{actual} não contém um número de pedido"
+  end
+
+end

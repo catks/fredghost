@@ -14,8 +14,9 @@ Before do |scenario|
 end
 
 After do |scenario|
+  scenario_tags = scenario.source_tag_names
   if scenario.failed?
     screenshot_embed
   end
-  shutdown_test_server
+  shutdown_test_server unless scenario_tags.include?('@dont_shutdown') #não fecha o servidor de testes apos a execução do cenário
 end

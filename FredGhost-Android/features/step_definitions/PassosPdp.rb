@@ -54,7 +54,7 @@ Então(/^posso visualizar os tamanhos disponíveis$/) do
 end
 
 Então(/^escolho o tamanho "([^"]*)"$/) do |tamanho|
-  sleep 2
+  aguardar_carregar
   tap_mark 'Tamanho'
   sleep 2
   tap_mark tamanho

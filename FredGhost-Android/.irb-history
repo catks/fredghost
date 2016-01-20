@@ -1,18 +1,3 @@
-query "*"
-query "* id:'text2'"
-(query "* id:'text2'")[1]
-touch (query "* id:'text2'")[1]
-touch (query "* id:'text2'")[1]
-(query "* id:'text2'")[1]
-touch (query "* id:'text2'")
-(query "* id:'text2'")
-query "*"
-start_test_server_in_background
-query "* id:'text2'"
-query "* id:'text2'" , :text
-query "* id:'price'" , :text
-tap_mark "Manhã"
-query "TextView"
 query "TextView"
 query "*"
 query "*"
@@ -47,4 +32,19 @@ seletor
 include FredSeletor
 seletor
 seletor("*").id
+exit
+start_test_server_in_background
+shutdown_test_server
+exit
+query "*"
+query "TextView"
+"Hue".eql? "Hue"
+exit
+query "TextView"
+start_
+start_test_server_in_background
+touch "* id:'financing'"
+query "*"
+query "DropDownListView"
+query "DropDownListView AppCompatTextView"
 exit

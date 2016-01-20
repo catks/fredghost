@@ -1,6 +1,6 @@
 # encoding: utf-8
 module Modelos
-  class ItemCarrinho
+  class ItemCarrinho #TODO: Refatorar o nome da classe para ItemProduto
     attr_accessor :nome, :quantidade , :preco , :cor , :tamanho , :prazo_de_entrega
 
     def initialize(nome,quantidade,preco,cor,tamanho,prazo = nil)

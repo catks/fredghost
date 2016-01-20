@@ -108,12 +108,11 @@ end
 
 Então(/^visualizo as bandeiras dos cartões$/) do
   expect(Elementos::Checkout::NovoCartao::Bandeiras).to exist_in_page
-  #bandeiras = query Elementos::Checkout::NovoCartao::Bandeiras , :id
-  bandeiras = seletor(Elementos::Checkout::NovoCartao::Bandeiras).id
+  bandeiras = query Elementos::Checkout::NovoCartao::Bandeiras , :id
   bandeiras.each do |bandeira|
     puts bandeira
   end
-  expect(bandeiras).to include('mastercard ')
+  expect(bandeiras).to include('mastercard')
   expect(bandeiras).to include('visa')
   expect(bandeiras).to include('diners')
   expect(bandeiras).to include('american_express')
@@ -126,4 +125,60 @@ Mas(/^continuo na tela de adicionar cartão.*$/) do
   steps %{
     Então visualizo os campos para adicionar um novo cartão
   }
+end
+
+Mas(/^continuo na tela de "([^"]*)".*$/) do |tela|
+  aguardar_carregar
+  nome_tela = (query Elementos::Nome_Tela , :text).first
+  expect(Elementos::Nome_Tela).to has_the_text(tela)
+end
+
+Então(/^vejo as opções de parcelamento$/) do
+  touch Elementos::Checkout::Alterar_Opcoes_De_Parcelamento
+  opcoes_parcelamento = query Elementos::Checkout::Opcoes_De_Parcelamento , :text
+  puts "Opções de parcelamento disponíveis:"
+  opcoes_parcelamento.each{ |opcao| puts opcao }
+  expect(opcoes_parcelamento).not_to be_empty
+  touch Elementos::Checkout::Opcoes_De_Parcelamento
+end
+
+Então(/^posso visualizar o número do pedido$/) do
+  num_pedido = (query Elementos::ResumoDeCompra::Numero_Do_Pedido , :text).first
+  puts "Número do Pedido: #{num_pedido}"
+  expect(num_pedido).to be_an_order_number
+end
+
+Então(/^posso visualizar os meus produtos$/) do
+
+  while (query "* marked:'Forma de Pagamento'").empty? # Lê os produtos do pedido até que a seção Seu pedido acaba e comece a forma de pagamento
+    nomes = query Elementos::ResumoDeCompra::Produtos::Nomes , :text
+    tamanhos = query Elementos::ResumoDeCompra::Produtos::Tamanhos , :text
+    quantidades = query Elementos::ResumoDeCompra::Produtos::Quantidades , :text
+    prazos = query Elementos::ResumoDeCompra::Produtos::Prazos, :text
+    precos = query Elementos::ResumoDeCompra::Precos::Prazos, :text
+
+    #Verifica se o produto no resumo da compra estava no carrinho
+    nomes.each_with_index do |nome,index|
+      #TODO: Colocar uma validação pra quando o calabash não pegar todos os dados de um produto que estiver aparecendo parcialmente na tela
+      @produtos_carrinho.any? do |produto|
+        (produto.nome == nome) && (produto.tamanho == tamanhos[index] && (produto.quantidade == quantidades[index]) && (produto.prazo_de_entrega == prazos[index]) && (produto.preco == precos[index])
+      end
+    end
+
+
+    scroll_down
+  end
+
+end
+
+Então(/^posso visualizar a forma de pagamento$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Então(/^posso visualizar o endereço de entrega$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Então(/^posso visualizar os valores pagos$/) do
+  pending # Write code here that turns the phrase above into concrete actions
 end
