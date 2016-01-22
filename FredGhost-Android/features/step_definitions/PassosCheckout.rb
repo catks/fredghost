@@ -157,14 +157,31 @@ Então(/^posso visualizar os meus produtos$/) do
     prazos = query Elementos::ResumoDeCompra::Produtos::Prazos, :text
     precos = query Elementos::ResumoDeCompra::Precos::Prazos, :text
 
+
     #Verifica se o produto no resumo da compra estava no carrinho
     nomes.each_with_index do |nome,index|
-      #TODO: Colocar uma validação pra quando o calabash não pegar todos os dados de um produto que estiver aparecendo parcialmente na tela
-      @produtos_carrinho.any? do |produto|
-        (produto.nome == nome) && (produto.tamanho == tamanhos[index] && (produto.quantidade == quantidades[index]) && (produto.prazo_de_entrega == prazos[index]) && (produto.preco == precos[index])
+      unless [nomes[index],tamanhos[index],quantidades[index],prazos[index],precos[index]].any? &:nil? #A menos que um dos itens seja nulo
+        puts %{
+          Esperado:
+          Nome: #{nome}
+          Tamanho: #{tamanhos[index]}
+          Quantidade: #{quantidades[index]}
+          Prazos: #{prazos[index]}
+          Preço: #{precos[index]}
+        }
+        @produtos_carrinho.any? do |produto|
+          (produto.nome == nome) && (produto.tamanho == tamanhos[index]) && (produto.quantidade == quantidades[index]) && (produto.prazo_de_entrega == prazos[index]) && (produto.preco == precos[index])
+          puts %{
+            Nome: #{nome}
+            Tamanho: #{tamanhos[index]}
+            Quantidade: #{quantidades[index]}
+            Prazos: #{prazos[index]}
+            Preço: #{precos[index]}
+          }
+        end
+
       end
     end
-
 
     scroll_down
   end

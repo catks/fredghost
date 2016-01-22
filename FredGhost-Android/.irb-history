@@ -1,20 +1,3 @@
-query "TextView"
-query "*"
-query "*"
-reinstall_apps
-start_TE
-start_test_server_in_background
-query "*"
-query "*"
-query "* marked:'Bolteo Bancario'"
-query "* marked:'Bolteo Bancário'"
-query "* marked:'Boleto Bancário'"
-query "* marked:'Boleto Bancário'"
-start_test_server_in_background
-query "* marked:'Boleto Bancário'"
-reinstall_apps
-query "*"
-start_test_server_in_background
 start_test_server_in_background
 exit
 start_test_server_in_background
@@ -48,3 +31,20 @@ query "*"
 query "DropDownListView"
 query "DropDownListView AppCompatTextView"
 exit
+query "*"
+start_test_server_in_background
+query "ImageView"
+query "*"
+query "AppCompatImageView"
+query "AppCompatImageView"
+(query "AppCompatImageView" , :tag)
+(query "AppCompatImageView" , :tag).compact
+query "*"
+query "*"
+start_test_server_in_background
+start_test_server_in_background
+query "*"
+start_test_server_in_background
+exit
+query "*"
+query "id:'date_picker_day'"
